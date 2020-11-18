@@ -56,23 +56,16 @@ export const DefaultToolbar = [
  * Table toolbar
  */
 export const TableToolbar = [
-  'add-more',
-  'separator',
   'bold',
   'italic',
   'code',
-  'separator',
   'font-family',
   'fore-color',
   'back-color',
   'format_clear',
-  'separator',
   'bullet_list',
   'ordered_list',
-  'todo_list',
-  'separator',
   'align-dropdown',
-  'separator',
   'table',
 ]
 

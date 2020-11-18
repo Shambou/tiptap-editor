@@ -1,9 +1,10 @@
 <template>
   <button class="o-menubar-btn button"
           :label="label" :to="to">
-      <span class="btn-content">
+      <span class="btn-content" v-if="icon">
         <i v-if='icon' class="material-icons editor-icon">{{icon}}</i>
       </span>
+    <span v-if='mdiIcon' style="font-size: 25px" class="mdi" :class="mdiIcon"></span>
     <slot></slot>
   </button>
 </template>
@@ -24,6 +25,10 @@ export default {
       default: 'primary'
     },
     icon: {
+      type: String,
+      default: ''
+    },
+    mdiIcon: {
       type: String,
       default: ''
     },

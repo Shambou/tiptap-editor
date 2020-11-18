@@ -1,18 +1,31 @@
 <template>
-  <o-menubar-btn icon="table" tooltip="insert" class="o-table-btn">
-    <app-dropdown ref="tablePopover" @hide="onHide" class="o-menu o-table-btn-menu">
-      <o-table-grid :commands="commands" />
-    </app-dropdown>
+  <app-dropdown class="o-table-btn-menu" @hide="onHide" :persistent="false">
+    <template slot="toggler">
+      <button class="o-menubar-btn button">
+          <span class="btn-content">
+            <i class="material-icons editor-icon">border_clear</i>
+          </span>
+      </button>
+    </template>
 
-<!--    <q-menu ref="tablePopover" anchor="bottom middle" self="top middle" content-class="o-menu o-table-btn-menu" @hide="onHide">-->
-<!--      <o-table-grid :commands="commands" />-->
-<!--    </q-menu>-->
-  </o-menubar-btn>
+    <o-table-grid :commands="commands" class="o-table-btn-menu"/>
+  </app-dropdown>
+
+  <!--  <o-menubar-btn icon="table" tooltip="insert" class="o-table-btn">-->
+  <!--    <app-dropdown ref="tablePopover" @hide="onHide" class="o-menu o-table-btn-menu">-->
+
+  <!--    </app-dropdown>-->
+
+  <!--    <q-menu ref="tablePopover" anchor="bottom middle" self="top middle" content-class="o-menu o-table-btn-menu" @hide="onHide">-->
+  <!--      <o-table-grid :commands="commands" />-->
+  <!--    </q-menu>-->
+  <!--  </o-menubar-btn>-->
 </template>
 
 <script>
 import OMenubarBtn from '@/components/buttons/OMenubarBtn'
 import OTableGrid from '@/components/common/OTableGrid'
+
 export default {
   name: 'o-table-btn',
   data () {
@@ -57,15 +70,17 @@ export default {
       this.commands.createTable({ rowsCount: this.selectedRows, colsCount: this.selectedColumns, withHeaderRow: true })
     }
   },
-  computed: {
-  }
+  computed: {}
 }
 </script>
 
 <style lang="scss">
 .o-table-btn-menu {
+  //width: 30px;
+
   .grid {
     padding: 1rem;
+
     .cell {
       height: 20px;
       width: 20px;
@@ -73,9 +88,10 @@ export default {
       border: solid 1px #ccc;
       border-radius: 2px;
     }
+
     .cell.selected {
       border: solid 1px #1976d2;
-      background: rgba(25,118,210,0.2);
+      background: rgba(25, 118, 210, 0.2);
     }
   }
 }

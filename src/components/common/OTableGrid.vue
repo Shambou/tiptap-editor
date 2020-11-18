@@ -1,5 +1,5 @@
 <template>
-  <app-dropdown-content class="o-table-grid">
+  <app-dropdown-content class="o-table-grid dropdown-content">
 
     <div class="row justify-start cursor-pointer" v-for="(row, i) in rows" :key="`row-${i}`">
       <div v-for="(col, j) in columns" :key="`col-${j}`">
