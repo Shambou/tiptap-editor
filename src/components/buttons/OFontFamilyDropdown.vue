@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-dropdown>
+    <app-dropdown class="o-font-family">
       <template slot="toggler">
         <button class="o-menubar-btn button">
           <span class="btn-content">
@@ -8,7 +8,7 @@
           </span>
         </button>
       </template>
-      <app-dropdown-content>
+      <app-dropdown-content class="dropdown-content">
         <app-dropdown-item v-for="(item, index) of fontFamilies"
                            :key="index"
                            :class="{ 'is-active': isActive(item.value) }"
@@ -18,22 +18,22 @@
       </app-dropdown-content>
     </app-dropdown>
 
-<!--    <q-btn-dropdown icon="mdi-format-font" menu-anchor="bottom left" menu-self="top left" class="o-font-family"-->
-<!--                    content-class="o-menu o-align-dropdown-menu" dense flat>-->
-<!--      <q-list>-->
-<!--        <template v-for="(item, index) of fontFamilies">-->
-<!--          <q-separator :key="index" v-if="item.separator"/>-->
-<!--          <q-item :key="index"-->
-<!--                  :class="{ 'is-active': isActive(item.value) }"-->
-<!--                  @click.native="commands.fontFamily({fontFamily: item.value})" clickable v-close-popup v-else>-->
-<!--            <q-item-section :style="`font-family: ${item.value}`">{{ item.label }}</q-item-section>-->
-<!--            <q-item-section side>-->
-<!--              <q-icon name="mdi-check" class="checked"/>-->
-<!--            </q-item-section>-->
-<!--          </q-item>-->
-<!--        </template>-->
-<!--      </q-list>-->
-<!--    </q-btn-dropdown>-->
+    <!--    <q-btn-dropdown icon="mdi-format-font" menu-anchor="bottom left" menu-self="top left" class="o-font-family"-->
+    <!--                    content-class="o-menu o-align-dropdown-menu" dense flat>-->
+    <!--      <q-list>-->
+    <!--        <template v-for="(item, index) of fontFamilies">-->
+    <!--          <q-separator :key="index" v-if="item.separator"/>-->
+    <!--          <q-item :key="index"-->
+    <!--                  :class="{ 'is-active': isActive(item.value) }"-->
+    <!--                  @click.native="commands.fontFamily({fontFamily: item.value})" clickable v-close-popup v-else>-->
+    <!--            <q-item-section :style="`font-family: ${item.value}`">{{ item.label }}</q-item-section>-->
+    <!--            <q-item-section side>-->
+    <!--              <q-icon name="mdi-check" class="checked"/>-->
+    <!--            </q-item-section>-->
+    <!--          </q-item>-->
+    <!--        </template>-->
+    <!--      </q-list>-->
+    <!--    </q-btn-dropdown>-->
   </div>
 </template>
 
@@ -81,10 +81,18 @@ export default {
 
 <style lang="scss">
 .o-font-family {
-  padding: 4px;
+  padding: 0px;
 
-  .q-btn-dropdown__arrow {
-    margin-left: 0;
+  .dropdown-content {
+    background: #fff;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    position: relative;
+    z-index: 1000;
+    a {
+      display: block;
+    }
   }
+
 }
 </style>

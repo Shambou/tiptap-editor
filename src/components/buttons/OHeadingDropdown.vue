@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-dropdown>
+    <app-dropdown class="o-heading-dropdown">
       <template slot="toggler">
         <button class="o-menubar-btn button">
           <span class="btn-content">
@@ -47,10 +47,7 @@ export default {
 
 <style lang="scss">
   .o-heading-dropdown {
-    padding: 4px;
+    padding: 0;
 
-    .q-btn-dropdown__arrow {
-      margin-left: 0;
-    }
   }
 </style>

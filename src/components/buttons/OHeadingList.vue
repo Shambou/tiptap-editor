@@ -1,5 +1,5 @@
 <template>
-  <app-dropdown-content>
+  <app-dropdown-content class="dropdown-content">
     <app-dropdown-item @click.native="commands.paragraph" >
       <span>Paragraph</span>
     </app-dropdown-item>
@@ -7,7 +7,7 @@
                        :key="index"
                        :class="{ 'is-active': isActive(item.value) }"
                        @click.native="commands.heading({ level: item.value })">
-      <span>{{ `H${item.value}` }} {{ item.label }}</span>
+      <span>{{ `H${item.value}` }}</span>
     </app-dropdown-item>
   </app-dropdown-content>
 

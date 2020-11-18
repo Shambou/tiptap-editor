@@ -27,8 +27,8 @@ import {
 } from 'tiptap-extensions'
 
 import {
-  OTitle,
-  ODoc,
+  // OTitle,
+  // ODoc,
   OParagraph,
   OBlockquote,
   OTodoItem,
@@ -73,8 +73,8 @@ const classes = {
   TrailingNode,
   // Image,
 
-  OTitle,
-  ODoc,
+  // OTitle,
+  // ODoc,
   OParagraph,
   OBlockquote,
   OTodoItem,

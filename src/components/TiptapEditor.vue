@@ -19,7 +19,7 @@
 <!--      <slot name="footer"></slot>-->
 <!--    </q-scroll-area>-->
     <div>
-      <editor-content class="editor__content o--note-preview note-step-side-editor" :editor="editor" />
+      <editor-content class="editor__content" :editor="editor" />
       <slot name="footer"></slot>
     </div>
   </section>
@@ -58,8 +58,8 @@ import javascript from 'highlight.js/lib/languages/javascript'
 import css from 'highlight.js/lib/languages/css'
 
 import {
-  OTitle,
-  ODoc,
+  // OTitle,
+  // ODoc,
   OParagraph,
   OBlockquote,
   OAlign,
@@ -75,6 +75,7 @@ import {
   OPrint,
   OImage,
   OEmbed,
+  OTodoItem,
   RecommendedExtensions
 } from '@/extentions'
 
@@ -236,9 +237,9 @@ export default {
               extensions.push(new TableRow())
               continue
 
-            // case 'OTodoItem':
-            //   extension = new OTodoItem({ nested: true })
-            //   break
+            case 'OTodoItem':
+              extension = new OTodoItem({ nested: true })
+              break
             case 'OHeading':
               extension = new OHeading({ levels: [1, 2, 3, 4, 5] })
               break

@@ -18,7 +18,7 @@ export default {
   data () {
     return {
       options: {
-        content: 'content',
+        content: 'Testiram',
         editable: true,
         extensions: [
           ...RecommendedExtensions,
@@ -28,10 +28,15 @@ export default {
         toolbar: [
           // 'add-more',
           // 'separator',
-          // 'bold',
-          // 'italic',
-          // 'underline',
-          // 'font-family'
+          'bold',
+          'italic',
+          'underline',
+          'font-family',
+          'strike',
+          'code',
+          'separator',
+          'heading',
+          'fore-color',
           // other toolbar buttons
           // name string
         ]

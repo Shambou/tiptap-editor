@@ -1,14 +1,15 @@
 <template>
   <div>
-    <app-dropdown>
+    <app-dropdown class="o-fore-color-dropdown">
       <template slot="toggler">
-        <button class="o-menubar-btn button o-fore-color-dropdown">
+        <button class="o-menubar-btn button">
           <span class="btn-content">
             <i class="material-icons editor-icon">format_paint</i>
           </span>
         </button>
-        <div class="indicator" :style="`background: ${hex}`"></div>
       </template>
+
+      <div class="indicator" v-if="hex" :style="`background: ${hex}`"></div>
 
       <o-color-board :active-color="activeColor" @select="onSelect"/>
     </app-dropdown>
@@ -17,7 +18,7 @@
 <!--                    class="o-fore-color-dropdown" content-class="o-fore-color-menu" @click="onSelectCurrent" split flat>-->
 <!--      <section class="row justify-center label" slot="label">-->
 <!--        <div><q-icon name="mdi-format-color-text"/></div>-->
-<!--        <div class="indicator" :style="`background: ${hex}`"></div>-->
+
 <!--      </section>-->
 
 <!--    </q-btn-dropdown>-->
@@ -32,7 +33,7 @@ export default {
   name: 'o-fore-color-dropdown',
   data () {
     return {
-      hex: '#ff4d4f',
+      hex: false,
       closable: false
     }
   },
@@ -71,33 +72,10 @@ export default {
 
 <style lang="scss">
 .o-fore-color-dropdown {
-  .q-btn-dropdown__arrow {
-    margin-left: 0;
-  }
-  .q-btn {
-    &:first-child {
-      padding: 0 2px 0 4px;
-    }
-    &:last-child {
-      padding: 0 0px 0 2px;
-    }
-  }
-  .q-btn-dropdown__arrow-container {
-    border: none;
-  }
-  .label {
-    width: 20px;
-    height: 20px;
-    margin-top: -2px;
-    .q-icon {
-      margin-top: -8px;
-      font-size: 1.2rem;
-    }
-    .indicator {
-      width: 14px;
-      height: 3px;
-      margin-top: -8px;
-    }
+  .indicator {
+    width: 14px;
+    height: 3px;
+    margin-top: -3px;
   }
 }
 .o-fore-color-menu {

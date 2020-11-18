@@ -1,4 +1,4 @@
-export { default as OTitle } from '@/extentions/Title'
+// export { default as OTitle } from '@/extentions/Title'
 export { default as ODoc } from '@/extentions/Doc'
 export { default as OParagraph } from '@/extentions/Paragraph'
 export { default as OBlockquote } from '@/extentions/Blockquote'
@@ -45,11 +45,11 @@ export const TipTapExtensions = [
 ]
 
 export const CustomTipTapExtensions = [
-  'OTitle',
-  'ODoc',
+  // 'OTitle',
+  // 'ODoc',
   'OParagraph',
   'OBlockquote',
-  // 'OTodoItem',
+  'OTodoItem',
   'OHeading',
   'OAlignment',
   'OIndent',

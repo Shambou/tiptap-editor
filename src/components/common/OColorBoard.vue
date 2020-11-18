@@ -1,5 +1,5 @@
 <template>
-  <app-dropdown-content class="o-color-board">
+  <app-dropdown-content class="o-color-board dropdown-content">
     <div class="row color-row" v-for="(row, i) in colorSet" :key="`row-${i}`">
       <div class="row color-column" v-for="(col, j) in row" :key="`col-${j}`">
         <div class="row justify-center items-center cell-container" @click="onSelect(col)">
@@ -144,8 +144,6 @@ export default {
     }
   }
   .cell-container {
-    width: 24px;
-    height: 24px;
     margin: 1px;
     border-radius: 2px;
     border: solid 1px transparent;
@@ -153,7 +151,7 @@ export default {
     box-sizing: border-box;
     .cell {
       width: 20px;
-      height: 20px;
+      height: 19px;
       border-radius: 2px;
     }
     .cell.border {
