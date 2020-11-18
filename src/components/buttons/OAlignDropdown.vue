@@ -8,7 +8,7 @@
           </span>
         </button>
       </template>
-      <app-dropdown-content>
+      <app-dropdown-content class="dropdown-content">
         <app-dropdown-item v-for="(item, index) in alignments"
                            :key="index"
                            :class="{ 'is-active': isActive(item.value) }"
@@ -79,7 +79,4 @@ export default {
   padding: 0;
 }
 
-.o-align-dropdown .q-btn-dropdown__arrow {
-  margin-left: 0;
-}
 </style>

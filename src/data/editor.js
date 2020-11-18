@@ -1,12 +1,4 @@
 /**
- * Data: Editor
- *
- * @author Micle Bu, micle@oriovo.com
- * @version 1.0
- * @date 2020.04.11
- */
-
-/**
  * Command component except for simple commands
  */
 export const CommandComponents = {
@@ -47,7 +39,6 @@ export const DefaultToolbar = [
   'horizontal',
   'bullet_list',
   'ordered_list',
-  'todo_list',
   'separator',
   'blockquote',
   'code_block',

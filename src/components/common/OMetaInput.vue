@@ -1,18 +1,11 @@
 <template>
-  <app-dropdown-content class="o-meta-input">
+  <app-dropdown-content class="o-meta-input dropdown-content">
     <div class="title">{{title}}</div>
     <div class="fields">
-      <input v-model="value" ref="input" type="text" @keyup.enter="onConfirm" placeholder="Link Address" />
+      <input class="form-input" v-model="value" ref="input" type="text" @keyup.enter="onConfirm" placeholder="Link Address" />
     </div>
     <div class="actions row justify-between">
-      <button class="button" @click="$emit('secondAction')">Cancel</button>
-      <button class="button" @click="onConfirm">Ok</button>
-<!--      <q-btn class="bg-grey-3" @click="$emit('secondAction')" flat v-close-popup>-->
-<!--        Cancel-->
-<!--      </q-btn>-->
-<!--      <q-btn class="bg-blue text-white" @click="onConfirm" flat v-close-popup>-->
-<!--        Ok-->
-<!--      </q-btn>-->
+      <button class="button primary" style="margin-right: 10px" @click="onConfirm">Ok</button>
     </div>
   </app-dropdown-content>
 </template>

@@ -12,6 +12,7 @@ import { mixin as clickaway } from 'vue-clickaway'
 export default {
   name: 'app-dropdown',
   mixins: [clickaway],
+  props: ['persistent'],
   provide () {
     return {
       sharedState: this.sharedState
@@ -26,7 +27,13 @@ export default {
   },
   methods: {
     toggle () {
-      this.sharedState.active = !this.sharedState.active
+      if (!this.persistent || !this.sharedState.active) {
+        this.sharedState.active = !this.sharedState.active
+      }
+
+      if (this.sharedState.active) {
+        this.$emit('show')
+      }
     },
     away () {
       this.sharedState.active = false

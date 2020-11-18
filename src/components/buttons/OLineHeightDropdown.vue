@@ -8,7 +8,7 @@
           </span>
         </button>
       </template>
-      <app-dropdown-content>
+      <app-dropdown-content class="dropdown-content">
         <app-dropdown-item v-for="(item, index) of types"
                            :key="index"
                            :class="{ 'is-active': isActive(item.value) }"
