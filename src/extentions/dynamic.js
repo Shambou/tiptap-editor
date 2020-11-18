@@ -6,6 +6,8 @@ import {
   ListItem,
   OrderedList,
   TodoList,
+  TodoItem,
+  Blockquote,
   Bold,
   Code,
   Italic,
@@ -46,12 +48,14 @@ import {
 
 const classes = {
   BulletList,
+  Blockquote,
   CodeBlock,
   CodeBlockHighlight,
   HardBreak,
   ListItem,
   OrderedList,
   TodoList,
+  TodoItem,
   Bold,
   Code,
   Italic,

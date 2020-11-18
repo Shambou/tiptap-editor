@@ -1,15 +1,15 @@
 <template>
-  <section class="o-color-board">
+  <app-dropdown-content class="o-color-board">
     <div class="row color-row" v-for="(row, i) in colorSet" :key="`row-${i}`">
       <div class="row color-column" v-for="(col, j) in row" :key="`col-${j}`">
         <div class="row justify-center items-center cell-container" @click="onSelect(col)">
           <div class="row justify-center items-center cell" :class="{ 'border': col.border }" :style="{ backgroundColor: col.hex }">
-            <q-icon name="done" :style="{ color: highlightColor(col.rgb) }" v-if="isActive(col.hex)" />
+            <i class="material-icons editor-icon" :style="{ color: highlightColor(col.rgb) }" v-if="isActive(col.hex)"></i>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </app-dropdown-content>
 </template>
 
 <script>

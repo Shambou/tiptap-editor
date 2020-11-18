@@ -1,8 +1,12 @@
 <template>
-  <o-menubar-btn icon="mdi-table" :tooltip="$o.lang.table.insert" class="o-table-btn">
-    <q-menu ref="tablePopover" anchor="bottom middle" self="top middle" content-class="o-menu o-table-btn-menu" @hide="onHide">
+  <o-menubar-btn icon="table" tooltip="insert" class="o-table-btn">
+    <app-dropdown ref="tablePopover" @hide="onHide" class="o-menu o-table-btn-menu">
       <o-table-grid :commands="commands" />
-    </q-menu>
+    </app-dropdown>
+
+<!--    <q-menu ref="tablePopover" anchor="bottom middle" self="top middle" content-class="o-menu o-table-btn-menu" @hide="onHide">-->
+<!--      <o-table-grid :commands="commands" />-->
+<!--    </q-menu>-->
   </o-menubar-btn>
 </template>
 

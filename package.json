@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.18.1",
     "core-js": "^3.6.5",
+    "material-design-icons": "^3.0.1",
     "prosemirror-utils": "^0.9.6",
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0",
@@ -17,6 +18,7 @@
     "tiptap-extensions": "^1.31.1",
     "tiptap-utils": "^1.10.3",
     "vue": "^2.6.11",
+    "vue-clickaway": "^2.2.2",
     "vue-codemirror": "^4.0.6"
   },
   "devDependencies": {

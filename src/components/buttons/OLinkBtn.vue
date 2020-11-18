@@ -1,19 +1,17 @@
 <template>
-  <o-menubar-btn icon="link" :tooltip="$o.lang.editor.hyperlink" class="o-link-btn">
-    <q-menu ref="linkPopover"
-            anchor="bottom middle"
-            self="top middle"
-            class="shadow-5" @show="onShow">
-      <o-meta-input :val="href" :title="$o.lang.editor.hyperlink" icon="link"
+  <o-menubar-btn icon="link" class="o-link-btn">
+    <app-dropdown ref="linkPopover" @show="onShow">
+      <o-meta-input :val="href" title="Hyperlink" icon="link"
                     @primaryAction="insertLink(commands.link, $event)">
       </o-meta-input>
-    </q-menu>
+    </app-dropdown>
   </o-menubar-btn>
 </template>
 
 <script>
 import OMenubarBtn from '@/components/buttons/OMenubarBtn'
 import OMetaInput from '@/components/common/OMetaInput'
+
 export default {
   name: 'o-link-btn',
   data () {
@@ -49,12 +47,11 @@ export default {
       command({ href })
     }
   },
-  computed: {
-  }
+  computed: {}
 }
 </script>
 
 <style lang="scss">
-  .o-photo-btn {
-  }
+.o-photo-btn {
+}
 </style>

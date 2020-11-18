@@ -53,9 +53,9 @@ export default {
   computed: {
     list () {
       return [
-        { label: this.$o.lang.editor.unorderedList, value: 'bullet_list', icon: 'format_list_bulleted', isActive: this.isActive.bullet_list(), command: this.commands.bullet_list },
-        { label: this.$o.lang.editor.orderedList, value: 'ordered_list', icon: 'format_list_numbered', isActive: this.isActive.ordered_list(), command: this.commands.ordered_list },
-        { label: this.$o.lang.editor.todoList, value: 'todo_list', icon: 'mdi-check-box-outline', isActive: this.isActive.todo_list(), command: this.commands.todo_list },
+        { label: 'Unordered List', value: 'bullet_list', icon: 'format_list_bulleted', isActive: this.isActive.bullet_list(), command: this.commands.bullet_list },
+        { label: 'Ordered List', value: 'ordered_list', icon: 'format_list_numbered', isActive: this.isActive.ordered_list(), command: this.commands.ordered_list },
+        { label: 'Todo List', value: 'todo_list', icon: 'mdi-check-box-outline', isActive: this.isActive.todo_list(), command: this.commands.todo_list },
       ]
     },
     currentItem () {
@@ -64,7 +64,7 @@ export default {
           return item
         }
       }
-      return { label: this.$o.lang.editor.unorderedList, value: 'bullet_list', icon: 'format_list_bulleted', isActive: this.isActive.bullet_list(), command: this.commands.bullet_list }
+      return { label: 'Unordered List', value: 'bullet_list', icon: 'format_list_bulleted', isActive: this.isActive.bullet_list(), command: this.commands.bullet_list }
     }
   }
 }

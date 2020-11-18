@@ -1,24 +1,20 @@
 <template>
-  <section class="o-meta-input">
+  <app-dropdown-content class="o-meta-input">
     <div class="title">{{title}}</div>
     <div class="fields">
-      <q-input v-model="value" ref="input" standout="bg-blue" clearable flat
-               :autofocus="true"
-               @keyup.enter.native="onConfirm" :placeholder="$o.lang.label.linkAddress">
-        <template v-slot:prepend>
-          <q-icon :name="icon" />
-        </template>
-      </q-input>
+      <input v-model="value" ref="input" type="text" @keyup.enter="onConfirm" placeholder="Link Address" />
     </div>
     <div class="actions row justify-between">
-      <q-btn class="bg-grey-3" @click="$emit('secondAction')" flat v-close-popup>
-        {{$o.lang.label.cancel}}
-      </q-btn>
-      <q-btn class="bg-blue text-white" @click="onConfirm" flat v-close-popup>
-        {{$o.lang.label.ok}}
-      </q-btn>
+      <button class="button" @click="$emit('secondAction')">Cancel</button>
+      <button class="button" @click="onConfirm">Ok</button>
+<!--      <q-btn class="bg-grey-3" @click="$emit('secondAction')" flat v-close-popup>-->
+<!--        Cancel-->
+<!--      </q-btn>-->
+<!--      <q-btn class="bg-blue text-white" @click="onConfirm" flat v-close-popup>-->
+<!--        Ok-->
+<!--      </q-btn>-->
     </div>
-  </section>
+  </app-dropdown-content>
 </template>
 
 <script>
@@ -36,7 +32,7 @@ export default {
     },
     title: {
       type: String,
-      default: '超链接'
+      default: ''
     },
     type: {
       type: String,

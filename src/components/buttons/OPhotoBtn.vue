@@ -1,11 +1,19 @@
 <template>
-  <o-menubar-btn icon="photo" :tooltip="$o.lang.editor.photo" class="o-photo-btn">
-    <q-menu ref="photoPopover" anchor="bottom middle" self="top middle" class="shadow-5">
-      <o-meta-input :title="$o.lang.editor.photo" icon="image"
+  <o-menubar-btn icon="photo" class="o-photo-btn">
+    <app-dropdown ref="photoPopover">
+      <o-meta-input title="Photo" icon="image"
                     @primaryAction="insertImage(commands.image, $event)">
       </o-meta-input>
-    </q-menu>
+    </app-dropdown>
   </o-menubar-btn>
+
+<!--  <o-menubar-btn icon="photo" :tooltip="$o.lang.editor.photo" class="o-photo-btn">-->
+<!--    <q-menu ref="photoPopover" anchor="bottom middle" self="top middle" class="shadow-5">-->
+<!--      <o-meta-input :title="$o.lang.editor.photo" icon="image"-->
+<!--                    @primaryAction="insertImage(commands.image, $event)">-->
+<!--      </o-meta-input>-->
+<!--    </q-menu>-->
+<!--  </o-menubar-btn>-->
 </template>
 
 <script>

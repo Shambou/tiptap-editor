@@ -1,23 +1,18 @@
 <template>
-  <q-btn class="o-menubar-btn"
-         :label="label" :to="to" flat>
-    <q-icon :name="icon" v-if="icon" />
-    <q-tooltip :delay="tipDelay" v-if="tooltip">
-      {{tooltip}}
-    </q-tooltip>
-    <q-tooltip anchor="center right" self="center left" v-if="vtooltip">
-      {{vtooltip}}
-    </q-tooltip>
+  <button class="o-menubar-btn button"
+          :label="label" :to="to">
+      <span class="btn-content">
+        <i v-if='icon' class="material-icons editor-icon">{{icon}}</i>
+      </span>
     <slot></slot>
-  </q-btn>
+  </button>
 </template>
 
 <script>
 export default {
   name: 'o-menubar-btn',
   data () {
-    return {
-    }
+    return {}
   },
   props: {
     to: {
@@ -49,21 +44,21 @@ export default {
       default: 500
     }
   },
-  methods: {
-  },
-  computed: {
-  }
+  methods: {},
+  mounted () {},
+  computed: {}
 }
 </script>
 
 <style lang="scss">
-  .o-menubar-btn {
-    padding: 0px;
-    font-weight: 400;
-    min-width: 30px;
-    min-height: unset;
-  }
-  .o-menubar-btn.is-active {
-    background: rgba(255,255,255,0.2);
-  }
+.o-menubar-btn {
+  padding: 0;
+  font-weight: 400;
+  min-width: 30px;
+  min-height: unset;
+}
+
+.o-menubar-btn.is-active {
+  background: rgba(255, 255, 255, 0.2);
+}
 </style>

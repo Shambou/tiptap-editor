@@ -7,7 +7,8 @@
                                     !(editorContext.isActive.embed && editorContext.isActive.embed()) }"
              :style="`left: ${editorContext.menu.left}px; bottom: ${editorContext.menu.bottom + 8}px;`">
       <template v-for="(item, index) of toolbar">
-        <q-separator vertical inset :key="index" v-if="item==='separator'" />
+        <hr role="separator" :key="index" aria-orientation="vertical" class="separator separator-vertical separator-vertical-inset" v-if="item==='separator'">
+
         <component :key="index"
                    :name="item"
                    :is="getName(item)"

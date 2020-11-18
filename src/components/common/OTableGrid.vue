@@ -1,17 +1,18 @@
 <template>
-  <section class="o-table-grid">
+  <app-dropdown-content class="o-table-grid">
+
     <div class="row justify-start cursor-pointer" v-for="(row, i) in rows" :key="`row-${i}`">
       <div v-for="(col, j) in columns" :key="`col-${j}`">
         <div class="cell" :class="{'selected': row <= selectedRows && col <= selectedColumns}"
              @mouseover="select(row, col)"
-             @click="onSelected()" v-close-popup></div>
+             @click="onSelected()"></div>
       </div>
     </div>
 
     <footer class="row justify-center q-pt-md">
-      {{selectedRows}} x {{selectedColumns}}
+      {{ selectedRows }} x {{ selectedColumns }}
     </footer>
-  </section>
+  </app-dropdown-content>
 </template>
 
 <script>
@@ -52,14 +53,14 @@ export default {
       this.commands.createTable({ rowsCount: this.selectedRows, colsCount: this.selectedColumns, withHeaderRow: true })
     }
   },
-  computed: {
-  }
+  computed: {}
 }
 </script>
 
 <style lang="scss">
 .o-table-grid {
   padding: 1rem;
+
   .cell {
     height: 20px;
     width: 20px;
@@ -67,9 +68,10 @@ export default {
     border: solid 1px #ccc;
     border-radius: 2px;
   }
+
   .cell.selected {
     border: solid 1px #1976d2;
-    background: rgba(25,118,210,0.2);
+    background: rgba(25, 118, 210, 0.2);
   }
 }
 </style>

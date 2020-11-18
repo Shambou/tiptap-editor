@@ -11,7 +11,7 @@
     </o-editor-menu-bar>
 
     <!-- Main Bubble -->
-    <o-editor-menu-bubble :editor="editor" :toolbar="editorMenuBubble" :selected-cell-size="selectedCellSize" v-if="editable && showBubble" />
+<!--    <o-editor-menu-bubble :editor="editor" :toolbar="editorMenuBubble" :selected-cell-size="selectedCellSize" v-if="editable && showBubble" />-->
 
 <!--    <q-scroll-area ref="editorScroll" class="editor-scroll-area" :class="`view-${pageView}`" v-if="scrollable">-->
 <!--      <q-scroll-observer @scroll="onScroll" />-->
@@ -59,22 +59,22 @@ import css from 'highlight.js/lib/languages/css'
 
 import {
   OTitle,
-  // ODoc,
-  // OParagraph,
-  // OBlockquote,
-  // OAlign,
-  // OAlignment,
-  // OIndent,
-  // OLineHeight,
-  // OBackColor,
-  // OForeColor,
-  // OFontFamily,
-  // OHeading,
-  // OIframe,
-  // OFormatClear,
-  // OPrint,
-  // OImage,
-  // OEmbed,
+  ODoc,
+  OParagraph,
+  OBlockquote,
+  OAlign,
+  OAlignment,
+  OIndent,
+  OLineHeight,
+  OBackColor,
+  OForeColor,
+  OFontFamily,
+  OHeading,
+  OIframe,
+  OFormatClear,
+  OPrint,
+  OImage,
+  OEmbed,
   RecommendedExtensions
 } from '@/extentions'
 
@@ -89,7 +89,6 @@ export default {
   name: 'tiptap-editor',
   data () {
     return {
-      // editor
       editor: null,
       selectedCellSize: 0
     }
@@ -170,7 +169,7 @@ export default {
       const customExtensions = this.generateExtensions()
       const extensions = [
         // custom
-        // ...customExtensions,
+        ...customExtensions,
 
         // required
         new HardBreak(),
@@ -183,7 +182,7 @@ export default {
           node: 'paragraph',
           notAfter: ['paragraph']
         }),
-        // new OAlign()
+        new OAlign()
       ]
 
       this.editor = new Editor({
@@ -240,14 +239,14 @@ export default {
             // case 'OTodoItem':
             //   extension = new OTodoItem({ nested: true })
             //   break
-            // case 'OHeading':
-            //   extension = new OHeading({ levels: [1, 2, 3, 4, 5] })
-            //   break
+            case 'OHeading':
+              extension = new OHeading({ levels: [1, 2, 3, 4, 5] })
+              break
             default:
               try {
                 extension = new DynamicClass(extension)
               } catch (e) {
-                console.error(e.message)
+                console.error(e.message, extension)
               }
               break
           }

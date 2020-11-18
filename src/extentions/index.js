@@ -36,9 +36,11 @@ export const TipTapExtensions = [
   'OrderedList',
   'ListItem',
   'TodoList',
+  'TodoItem',
   'HorizontalRule',
   'Table',
   'Link',
+  'Blockquote'
   // 'Image',
 ]
 
@@ -47,7 +49,7 @@ export const CustomTipTapExtensions = [
   'ODoc',
   'OParagraph',
   'OBlockquote',
-  'OTodoItem',
+  // 'OTodoItem',
   'OHeading',
   'OAlignment',
   'OIndent',
@@ -56,9 +58,6 @@ export const CustomTipTapExtensions = [
   'OBackColor',
   'OFontFamily',
   'OIframe',
-  'ODiagram',
-  'OKatexBlock',
-  'OKatexInline',
   'OFormatClear',
   'OPrint',
   'OImage',

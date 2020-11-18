@@ -1,31 +1,52 @@
 <template>
   <div>
-    <q-btn-dropdown icon="format_align_center" menu-anchor="bottom left" menu-self="top left" class="o-align-dropdown" content-class="o-menu o-align-dropdown-menu" dense flat>
-      <q-list>
-        <q-item v-for="(item, index) in alignments" :key="index"
-                :class="{ 'is-active': isActive(item.value) }"
-                @click.native="item.command({ textAlign: item.value })" clickable v-close-popup>
-          <q-item-section side>
-            <q-icon :name="`format_align_${item.value}`" />
-          </q-item-section>
-          <q-item-section>{{item.label}}</q-item-section>
-          <q-item-section side>
-            <q-icon name="mdi-check" class="checked" />
-          </q-item-section>
-        </q-item>
-      </q-list>
-    </q-btn-dropdown>
-    <q-tooltip :delay="500">{{$o.lang.editor.align}}</q-tooltip>
+    <app-dropdown class="o-align-dropdown">
+      <template slot="toggler">
+        <button class="o-menubar-btn button">
+          <span class="btn-content">
+            <i class="material-icons editor-icon">format_align_center</i>
+          </span>
+        </button>
+      </template>
+      <app-dropdown-content>
+        <app-dropdown-item v-for="(item, index) in alignments"
+                           :key="index"
+                           :class="{ 'is-active': isActive(item.value) }"
+                           @click.native="item.command({ textAlign: item.value })">
+          <span class="btn-content">
+            <i class="material-icons editor-icon">{{ `format_align_${item.value}` }}</i> {{ item.label }}
+          </span>
+        </app-dropdown-item>
+      </app-dropdown-content>
+    </app-dropdown>
+
+<!--    <q-btn-dropdown icon="format_align_center" menu-anchor="bottom left" menu-self="top left" class="o-align-dropdown"-->
+<!--                    content-class="o-menu o-align-dropdown-menu" dense flat>-->
+<!--      <q-list>-->
+<!--        <q-item v-for="(item, index) in alignments" :key="index"-->
+<!--                :class="{ 'is-active': isActive(item.value) }"-->
+<!--                @click.native="item.command({ textAlign: item.value })" clickable v-close-popup>-->
+<!--          <q-item-section side>-->
+<!--            <q-icon :name="`format_align_${item.value}`"/>-->
+<!--          </q-item-section>-->
+<!--          <q-item-section>{{ item.label }}</q-item-section>-->
+<!--          <q-item-section side>-->
+<!--            <q-icon name="mdi-check" class="checked"/>-->
+<!--          </q-item-section>-->
+<!--        </q-item>-->
+<!--      </q-list>-->
+<!--    </q-btn-dropdown>-->
+<!--    <q-tooltip :delay="500">{{ $o.lang.editor.align }}</q-tooltip>-->
   </div>
 </template>
 
 <script>
 import { isNodeActive } from '@/utils/node'
+
 export default {
   name: 'o-align-dropdown',
   data () {
-    return {
-    }
+    return {}
   },
   props: {
     editor: {
@@ -43,10 +64,10 @@ export default {
   computed: {
     alignments () {
       return [
-        { label: this.$o.lang.editor.left, value: 'left', command: this.commands.alignment },
-        { label: this.$o.lang.editor.center, value: 'center', command: this.commands.alignment },
-        { label: this.$o.lang.editor.right, value: 'right', command: this.commands.alignment },
-        { label: this.$o.lang.editor.justify, value: 'justify', command: this.commands.alignment },
+        { label: 'Left', value: 'left', command: this.commands.alignment },
+        { label: 'Center', value: 'center', command: this.commands.alignment },
+        { label: 'Right', value: 'right', command: this.commands.alignment },
+        { label: 'Justify', value: 'justify', command: this.commands.alignment },
       ]
     }
   }
@@ -55,7 +76,7 @@ export default {
 
 <style lang="scss">
 .o-align-dropdown {
-  padding: 4px;
+  padding: 0;
 }
 
 .o-align-dropdown .q-btn-dropdown__arrow {

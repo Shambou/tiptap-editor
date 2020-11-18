@@ -28,9 +28,10 @@ export default {
         toolbar: [
           // 'add-more',
           // 'separator',
-          'bold',
-          'italic',
-          'underline',
+          // 'bold',
+          // 'italic',
+          // 'underline',
+          // 'font-family'
           // other toolbar buttons
           // name string
         ]
@@ -54,7 +55,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }

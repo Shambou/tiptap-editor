@@ -27,8 +27,6 @@ export const CommandComponents = {
 }
 
 export const DefaultToolbar = [
-  'add-more',
-  'separator',
   'bold',
   'italic',
   'underline',
