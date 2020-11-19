@@ -1,6 +1,6 @@
 import { Node } from 'tiptap'
 import { setBlockType, textblockTypeInputRule, toggleBlockType } from 'tiptap-commands'
-import { ParagraphNodeSpec, getParagraphNodeAttrs, toParagraphDOM } from '@/extentions/Paragraph'
+import { ParagraphNodeSpec, getParagraphNodeAttrs, toParagraphDOM } from './Paragraph'
 
 function getUuid () {
   const s = []

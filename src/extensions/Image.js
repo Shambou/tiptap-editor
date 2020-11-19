@@ -1,5 +1,5 @@
 import { Image as TiptapImage } from 'tiptap-extensions'
-import OImageView from '@/components/views/OImageView'
+import OImageView from '../components/views/OImageView'
 
 function getAttrs (dom) {
   let {

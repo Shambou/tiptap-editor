@@ -6,7 +6,7 @@
  * @see https://github.com/Leecason/element-tiptap/blob/master/src/extensions/blockquote.ts
  */
 import { Blockquote as TiptapBlockquote } from 'tiptap-extensions'
-import { ParagraphNodeSpec, getParagraphNodeAttrs, toParagraphDOM } from '@/extentions/Paragraph'
+import { ParagraphNodeSpec, getParagraphNodeAttrs, toParagraphDOM } from './Paragraph'
 
 function getAttrs (dom) {
   return getParagraphNodeAttrs(dom)

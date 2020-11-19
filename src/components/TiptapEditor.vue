@@ -68,9 +68,9 @@ import {
   OEmbed,
   OTodoItem,
   RecommendedExtensions
-} from '@/extentions'
+} from '@/extensions'
 
-import DynamicClass from '@/extentions/dynamic'
+import DynamicClass from '@/extensions/dynamic'
 
 import OEditorMenuBar from '@/components/menubars/OEditorMenuBar'
 import OEditorMenuBubble from '@/components/menubars/OEditorMenuBubble'

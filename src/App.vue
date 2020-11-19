@@ -8,7 +8,7 @@
 
 <script>
 import TiptapEditor from './components/TiptapEditor'
-import { RecommendedExtensions } from './extentions'
+import { RecommendedExtensions } from './extensions'
 
 export default {
   name: 'App',

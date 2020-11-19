@@ -6,7 +6,7 @@
  * @see https://github.com/Leecason/element-tiptap/blob/master/src/extensions/print.ts
  */
 import { Extension } from 'tiptap'
-import { printHtml } from '@/utils/print'
+import { printHtml } from '../utils/print'
 
 export default class Print extends Extension {
   get name () {

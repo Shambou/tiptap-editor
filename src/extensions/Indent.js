@@ -6,7 +6,7 @@
  * @see https://github.com/Leecason/element-tiptap/blob/master/src/extensions/indent.ts
  */
 import { Extension } from 'tiptap'
-import { createIndentCommand } from '@/utils/indent'
+import { createIndentCommand } from '../utils/indent'
 
 export default class Indent extends Extension {
   get name () {

@@ -6,7 +6,7 @@
  * @see https://github.com/Leecason/element-tiptap/blob/master/src/extensions/line_height.ts
  */
 import { Extension } from 'tiptap'
-import { setLineHeight } from '@/utils/line_height'
+import { setLineHeight } from '../utils/line_height'
 
 export default class LineHeight extends Extension {
   get name () {

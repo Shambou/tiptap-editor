@@ -6,7 +6,7 @@
  * @see https://github.com/Leecason/element-tiptap/blob/master/src/extensions/todo_item.ts
  */
 import { TodoItem as TiptapTodoItem } from 'tiptap-extensions'
-import OTodoItemView from '@/components/views/OTodoItemView'
+import OTodoItemView from '../components/views/OTodoItemView'
 
 function getAttrs (dom) {
   let {

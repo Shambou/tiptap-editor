@@ -44,7 +44,7 @@ import {
   OPrint,
   OImage,
   OEmbed,
-} from '@/extentions'
+} from './'
 
 const classes = {
   BulletList,
@@ -71,10 +71,6 @@ const classes = {
   Focus,
   HorizontalRule,
   TrailingNode,
-  // Image,
-
-  // OTitle,
-  // ODoc,
   OParagraph,
   OBlockquote,
   OTodoItem,

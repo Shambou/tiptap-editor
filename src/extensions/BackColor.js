@@ -1,26 +1,26 @@
 import { markInputRule } from 'tiptap-commands'
 import { Mark } from 'tiptap'
-import { applyMark } from '@/utils/mark'
+import { applyMark } from '../utils/mark'
 
-export default class Align extends Mark {
+export default class BackColor extends Mark {
   get name () {
-    return 'align'
+    return 'backColor'
   }
 
   get schema () {
     return {
       attrs: {
-        textAlign: {
-          default: 'left'
+        backColor: {
+          default: '#000000'
         }
       },
       parseDOM: [
         {
-          style: 'text-align',
-          getAttrs: value => ({ textAlign: value })
+          style: 'background',
+          getAttrs: value => ({ backColor: value })
         }
       ],
-      toDOM: mark => ['span', { style: `text-align: ${mark.attrs.textAlign}; display: block` }, 0]
+      toDOM: mark => ['span', { style: `background: ${mark.attrs.backColor}` }, 0]
     }
   }
 

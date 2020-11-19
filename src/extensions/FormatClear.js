@@ -6,7 +6,7 @@
  * @see https://github.com/Leecason/element-tiptap/blob/master/src/extensions/format_clear.ts
  */
 import { Extension } from 'tiptap'
-import { clearMarks } from '@/utils/format_clear'
+import { clearMarks } from '../utils/format_clear'
 
 export default class FormatClear extends Extension {
   get name () {

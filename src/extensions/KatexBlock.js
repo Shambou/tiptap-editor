@@ -1,17 +1,17 @@
 /**
- * Extension: Diagram
+ * Extension: KatexBlock
  *
  * @author Micle Bu, micle@oriovo.com
  * @version 1.0
- * @date 2020.03.02
- * @see mermaid https://github.com/mermaid-js/mermaid
+ * @date 2020.03.03
+ * @see katex https://github.com/KaTeX/KaTeX
  */
 import { Node } from 'tiptap'
-import ODiagramView from '@/components/views/ODiagramView'
+import OKatexBlockView from '../components/views/OKatexBlockView'
 
-export default class Diagram extends Node {
+export default class KatexBlock extends Node {
   get name () {
-    return 'diagram'
+    return 'katex_block'
   }
 
   get schema () {
@@ -19,21 +19,17 @@ export default class Diagram extends Node {
       attrs: {
         src: {
           default: null
-        },
-        height: {
-          default: null
         }
       },
       group: 'block',
       selectable: false,
       parseDOM: [{
-        tag: 'diagram',
+        tag: 'katex',
         getAttrs: dom => ({
-          src: dom.getAttribute('src'),
-          height: dom.getAttribute('height')
+          src: dom.getAttribute('src')
         })
       }],
-      toDOM: node => ['diagram', {
+      toDOM: node => ['katex', {
         src: node.attrs.src
       }]
     }
@@ -50,6 +46,6 @@ export default class Diagram extends Node {
   }
 
   get view () {
-    return ODiagramView
+    return OKatexBlockView
   }
 }

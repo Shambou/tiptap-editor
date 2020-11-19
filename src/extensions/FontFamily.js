@@ -1,26 +1,26 @@
 import { markInputRule } from 'tiptap-commands'
 import { Mark } from 'tiptap'
-import { applyMark } from '@/utils/mark'
+import { applyMark } from '../utils/mark'
 
-export default class ForeColor extends Mark {
+export default class FontFamily extends Mark {
   get name () {
-    return 'foreColor'
+    return 'fontFamily'
   }
 
   get schema () {
     return {
       attrs: {
-        foreColor: {
-          default: '#000000'
+        fontFamily: {
+          default: ''
         }
       },
       parseDOM: [
         {
-          style: 'color',
-          getAttrs: value => ({ foreColor: value })
-        }
+          style: 'font-family',
+          getAttrs: value => ({ fontFamily: value })
+        },
       ],
-      toDOM: mark => ['span', { style: `color: ${mark.attrs.foreColor}` }, 0]
+      toDOM: mark => ['span', { style: `font-family: ${mark.attrs.fontFamily}` }, 0]
     }
   }
 

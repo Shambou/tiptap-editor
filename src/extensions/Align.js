@@ -1,26 +1,26 @@
 import { markInputRule } from 'tiptap-commands'
 import { Mark } from 'tiptap'
-import { applyMark } from '@/utils/mark'
+import { applyMark } from '../utils/mark'
 
-export default class FontFamily extends Mark {
+export default class Align extends Mark {
   get name () {
-    return 'fontFamily'
+    return 'align'
   }
 
   get schema () {
     return {
       attrs: {
-        fontFamily: {
-          default: ''
+        textAlign: {
+          default: 'left'
         }
       },
       parseDOM: [
         {
-          style: 'font-family',
-          getAttrs: value => ({ fontFamily: value })
-        },
+          style: 'text-align',
+          getAttrs: value => ({ textAlign: value })
+        }
       ],
-      toDOM: mark => ['span', { style: `font-family: ${mark.attrs.fontFamily}` }, 0]
+      toDOM: mark => ['span', { style: `text-align: ${mark.attrs.textAlign}; display: block` }, 0]
     }
   }
 

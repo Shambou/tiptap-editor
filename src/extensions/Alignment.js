@@ -1,5 +1,5 @@
 import { Extension } from 'tiptap'
-import { setAlignment } from '@/utils/alignment'
+import { setAlignment } from '../utils/alignment'
 
 export default class Alignment extends Extension {
   constructor (options = {}) {
