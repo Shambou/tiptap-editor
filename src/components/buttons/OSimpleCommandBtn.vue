@@ -1,7 +1,7 @@
 <template>
   <o-menubar-btn :icon="config.icon"
                  :class="{ 'is-active': config.isActive }"
-                 @click.native="config.command" />
+                 @click.native.prevent="config.command" />
 </template>
 
 <script>

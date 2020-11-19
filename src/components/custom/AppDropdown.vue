@@ -1,5 +1,5 @@
 <template>
-  <div @click="toggle" v-on-clickaway="away">
+  <div @click.prevent="toggle" v-on-clickaway="away">
     <slot name="toggler">
 
     </slot>

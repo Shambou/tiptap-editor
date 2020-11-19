@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-dropdown class="o-font-family">
+    <app-dropdown class="o-font-family o-dropdown">
       <template slot="toggler">
         <button class="o-menubar-btn button">
           <span class="btn-content">
