@@ -9,15 +9,6 @@
         <slot name="toolbar-right" />
       </template>
     </o-editor-menu-bar>
-
-    <!-- Main Bubble -->
-<!--    <o-editor-menu-bubble :editor="editor" :toolbar="editorMenuBubble" :selected-cell-size="selectedCellSize" v-if="editable && showBubble" />-->
-
-<!--    <q-scroll-area ref="editorScroll" class="editor-scroll-area" :class="`view-${pageView}`" v-if="scrollable">-->
-<!--      <q-scroll-observer @scroll="onScroll" />-->
-<!--      <editor-content class="editor__content o&#45;&#45;note-preview note-step-side-editor" :editor="editor" />-->
-<!--      <slot name="footer"></slot>-->
-<!--    </q-scroll-area>-->
     <div>
       <editor-content class="editor__content" :editor="editor" />
       <slot name="footer"></slot>

@@ -19,22 +19,6 @@
         </app-dropdown-item>
       </app-dropdown-content>
     </app-dropdown>
-
-<!--    <q-btn-dropdown icon="mdi-format-line-spacing" menu-anchor="bottom left" menu-self="top left" class="o-line-height-dropdown" content-class="o-menu o-line-height-dropdown-menu" dense flat>-->
-<!--      <q-list>-->
-<!--        <template v-for="(item, index) of types">-->
-<!--          <q-separator :key="`s-${index}`" v-if="item.separator" />-->
-<!--          <q-item :class="{ 'is-active': isActive(item.value) }" :key="index" clickable v-close-popup-->
-<!--                  @click.native="commands.lineHeight({lineHeight: item.value})">-->
-<!--            <q-item-section>{{item.label}}</q-item-section>-->
-<!--            <q-item-section side>-->
-<!--              <q-icon name="mdi-check" class="checked" />-->
-<!--            </q-item-section>-->
-<!--          </q-item>-->
-<!--        </template>-->
-<!--      </q-list>-->
-<!--    </q-btn-dropdown>-->
-<!--    <q-tooltip :delay="500">{{$o.lang.editor.lineHeight}}</q-tooltip>-->
   </div>
 </template>
 

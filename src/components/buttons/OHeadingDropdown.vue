@@ -11,11 +11,6 @@
 
       <o-heading-list :editor="editor" :commands="commands" />
     </app-dropdown>
-
-<!--    <q-btn-dropdown icon="mdi-format-header-pound" menu-anchor="bottom left" menu-self="top left" class="o-heading-dropdown" content-class="o-menu o-heading-dropdown-menu" flat>-->
-<!--      <o-heading-list :editor="editor" :commands="commands" />-->
-<!--    </q-btn-dropdown>-->
-<!--    <q-tooltip :delay="500">{{$o.lang.editor.headings}}</q-tooltip>-->
   </div>
 </template>
 

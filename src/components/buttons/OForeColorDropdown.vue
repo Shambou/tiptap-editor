@@ -13,16 +13,6 @@
 
       <o-color-board :active-color="activeColor" @select="onSelect"/>
     </app-dropdown>
-
-<!--    <q-btn-dropdown menu-anchor="bottom left" menu-self="top left" :menu-offset="[20, 0]"-->
-<!--                    class="o-fore-color-dropdown" content-class="o-fore-color-menu" @click="onSelectCurrent" split flat>-->
-<!--      <section class="row justify-center label" slot="label">-->
-<!--        <div><q-icon name="mdi-format-color-text"/></div>-->
-
-<!--      </section>-->
-
-<!--    </q-btn-dropdown>-->
-<!--    <q-tooltip :delay="500">{{$o.lang.editor.textColor}}</q-tooltip>-->
   </div>
 </template>
 

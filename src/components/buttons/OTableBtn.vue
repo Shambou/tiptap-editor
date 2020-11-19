@@ -10,16 +10,6 @@
 
     <o-table-grid :commands="commands" class="o-table-btn-menu"/>
   </app-dropdown>
-
-  <!--  <o-menubar-btn icon="table" tooltip="insert" class="o-table-btn">-->
-  <!--    <app-dropdown ref="tablePopover" @hide="onHide" class="o-menu o-table-btn-menu">-->
-
-  <!--    </app-dropdown>-->
-
-  <!--    <q-menu ref="tablePopover" anchor="bottom middle" self="top middle" content-class="o-menu o-table-btn-menu" @hide="onHide">-->
-  <!--      <o-table-grid :commands="commands" />-->
-  <!--    </q-menu>-->
-  <!--  </o-menubar-btn>-->
 </template>
 
 <script>

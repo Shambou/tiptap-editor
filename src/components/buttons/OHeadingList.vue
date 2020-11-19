@@ -10,23 +10,6 @@
       <span>{{ `H${item.value}` }}</span>
     </app-dropdown-item>
   </app-dropdown-content>
-
-  <!--  <q-list class="o-heading-list">-->
-  <!--    <q-item clickable v-close-popup @click.native="commands.paragraph">-->
-  <!--      <q-item-section side><q-icon name="mdi-format-pilcrow" /></q-item-section>-->
-  <!--      <q-item-section>{{$o.lang.editor.paragraph}}</q-item-section>-->
-  <!--    </q-item>-->
-  <!--    <q-separator />-->
-  <!--    <q-item v-for="(item, index) in headings" :key="index"-->
-  <!--            :class="{ 'is-active': isActive(item.value) }"-->
-  <!--            @click.native="commands.heading({ level: item.value })" clickable v-close-popup>-->
-  <!--      <q-item-section side>{{`H${item.value}`}}</q-item-section>-->
-  <!--      <q-item-section>{{item.label}}</q-item-section>-->
-  <!--      <q-item-section side>-->
-  <!--        <q-icon name="mdi-check" class="checked" />-->
-  <!--      </q-item-section>-->
-  <!--    </q-item>-->
-  <!--  </q-list>-->
 </template>
 
 <script>

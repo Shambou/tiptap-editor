@@ -36,9 +36,9 @@ export default {
   computed: {
     alignments () {
       return [
-        { label: this.$o.lang.editor.left, value: 'left', command: this.commands.alignment },
-        { label: this.$o.lang.editor.center, value: 'center', command: this.commands.alignment },
-        { label: this.$o.lang.editor.right, value: 'right', command: this.commands.alignment },
+        { label: 'Left', value: 'left', command: this.commands.alignment },
+        { label: 'Center', value: 'center', command: this.commands.alignment },
+        { label: 'Right', value: 'right', command: this.commands.alignment },
       ]
     }
   }

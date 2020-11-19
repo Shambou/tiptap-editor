@@ -11,12 +11,6 @@
     <o-meta-input style="width: 350px" :val="href" title="Hyperlink" icon="link" @primaryAction="insertLink(commands.link, $event)">
     </o-meta-input>
   </app-dropdown>
-
-  <!--  <o-menubar-btn icon="link" class="o-link-btn">-->
-  <!--    <app-dropdown ref="linkPopover" @show="onShow">-->
-  <!--      -->
-  <!--    </app-dropdown>-->
-  <!--  </o-menubar-btn>-->
 </template>
 
 <script>

@@ -17,23 +17,6 @@
         </app-dropdown-item>
       </app-dropdown-content>
     </app-dropdown>
-
-    <!--    <q-btn-dropdown icon="mdi-format-font" menu-anchor="bottom left" menu-self="top left" class="o-font-family"-->
-    <!--                    content-class="o-menu o-align-dropdown-menu" dense flat>-->
-    <!--      <q-list>-->
-    <!--        <template v-for="(item, index) of fontFamilies">-->
-    <!--          <q-separator :key="index" v-if="item.separator"/>-->
-    <!--          <q-item :key="index"-->
-    <!--                  :class="{ 'is-active': isActive(item.value) }"-->
-    <!--                  @click.native="commands.fontFamily({fontFamily: item.value})" clickable v-close-popup v-else>-->
-    <!--            <q-item-section :style="`font-family: ${item.value}`">{{ item.label }}</q-item-section>-->
-    <!--            <q-item-section side>-->
-    <!--              <q-icon name="mdi-check" class="checked"/>-->
-    <!--            </q-item-section>-->
-    <!--          </q-item>-->
-    <!--        </template>-->
-    <!--      </q-list>-->
-    <!--    </q-btn-dropdown>-->
   </div>
 </template>
 

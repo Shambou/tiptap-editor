@@ -31,60 +31,8 @@
       </div>
     </span>
     <div class="text-center text-grey caption" v-if="node.attrs.caption">
-      {{node.attrs.caption}}
+      {{ node.attrs.caption }}
     </div>
-
-    <!-- toolbar -->
-<!--    <div class="row col-12 justify-end items-center o-toolbar">-->
-<!--      <div class="col-auto actions">-->
-<!--        <q-btn color="blue" icon="fullscreen" @click="toggleFullScreen" flat>-->
-<!--          <q-tooltip anchor="top middle" self="bottom middle">Toggle Fullscreen</q-tooltip>-->
-<!--        </q-btn>-->
-<!--        <q-btn color="blue" icon="settings" flat v-if="view.editable">-->
-<!--          <q-tooltip anchor="top middle" self="bottom middle">Preferences</q-tooltip>-->
-<!--          <q-menu ref="imgRef" anchor="top right" self="top left" content-class="o-menu o-image-menu">-->
-<!--            <section class="q-px-md q-pb-sm">-->
-<!--              <div class="row justify-between items-center text-bold q-py-sm">-->
-<!--                <div>Preferences</div>-->
-<!--                <div><q-btn icon="close" size="0.7rem" flat dense @click="$refs.imgRef.hide()" /></div>-->
-<!--              </div>-->
-<!--              <q-separator />-->
-<!--              <div class="row col-12 items-start q-py-md">-->
-<!--                <q-input v-model="imgOption.width" type="number" debounce="500" standout-->
-<!--                         hint="Width" suffix="px"-->
-<!--                         @input="onInput($event, 'width')" />-->
-<!--                <div class="q-px-sm">-->
-<!--                  <q-btn :icon="keepRatio?'link':'link_off'"-->
-<!--                         @click="keepRatio = !keepRatio"-->
-<!--                         dense-->
-<!--                         flat>-->
-<!--                    <q-tooltip>{{keepRatio ? "Lock Aspect Ratio" : 'Unlock Aspect Ratio'}}</q-tooltip>-->
-<!--                  </q-btn>-->
-<!--                </div>-->
-<!--                <q-input v-model="imgOption.height" type="number" debounce="500" standout-->
-<!--                         suffix="px"-->
-<!--                         @input="onInput($event, 'height')" />-->
-<!--              </div>-->
-<!--              <div class="row col-12 items-center q-py-sm">-->
-<!--                Src-->
-<!--                <q-input v-model="imgOption.src" debounce="500" class="col-12" standout clearable-->
-<!--                         @input="onInput($event, 'src')" />-->
-<!--              </div>-->
-<!--              <div class="row col-12 items-center q-py-sm">-->
-<!--                Caption-->
-<!--                <q-input v-model="imgOption.caption" debounce="500" class="col-12" standout clearable-->
-<!--                         @input="onInput($event, 'caption')" />-->
-<!--              </div>-->
-<!--              <div class="row col-12 items-center q-py-sm">-->
-<!--                Link-->
-<!--                <q-input v-model="imgOption.ref" debounce="500" class="col-12" standout clearable-->
-<!--                         @input="onInput($event, 'ref')" />-->
-<!--              </div>-->
-<!--            </section>-->
-<!--          </q-menu>-->
-<!--        </q-btn>-->
-<!--      </div>-->
-<!--    </div>-->
   </span>
 </template>
 
@@ -92,6 +40,7 @@
 import { NodeSelection } from 'prosemirror-state'
 import { resolveImg } from '@/utils/image'
 import { clamp } from '@/utils/shared'
+
 export default {
   name: 'o-image-view',
   data () {
@@ -120,15 +69,11 @@ export default {
     }
   },
   props: ['node', 'view', 'updateAttrs', 'getPos', 'selected'],
-  components: {
-  },
+  components: {},
   methods: {
     getMaxSize () {
       const { width } = getComputedStyle(this.view.dom)
       this.maxWidth = parseInt(width, 10)
-    },
-    toggleFullScreen () {
-      this.fullScreen = !this.fullScreen
     },
     selectImage () {
       if (!this.view.editable && this.node.attrs.ref) {
@@ -331,6 +276,7 @@ export default {
   position: relative;
   display: inline-block;
   white-space: nowrap;
+
   .o-toolbar {
     position: absolute;
     top: 0;
@@ -342,23 +288,28 @@ export default {
     border-radius: 6px 6px 0 0;
     visibility: hidden;
     z-index: 10;
+
     .actions {
       .q-btn {
         padding: 0;
         margin-left: 4px;
       }
+
       .q-btn__wrapper {
         padding: 4px 8px;
         min-height: unset;
       }
     }
   }
+
   &:hover {
-    background: rgba(0,0,0,0.02);
+    background: rgba(0, 0, 0, 0.02);
+
     .o-toolbar {
       visibility: visible;
     }
   }
+
   .image-container {
     position: relative;
     display: inline-block;
@@ -369,9 +320,11 @@ export default {
     outline-color: transparent;
     clear: both;
     box-sizing: border-box;
+
     img {
       display: block;
     }
+
     .image-resizer {
       position: absolute;
       height: 100%;
@@ -380,6 +333,7 @@ export default {
       width: 100%;
       z-index: 1;
     }
+
     .image-resizer__handler {
       background-color: #1976d2;
       border: 1px solid #fff;
@@ -391,43 +345,50 @@ export default {
       width: 12px;
       z-index: 2;
     }
+
     .image-resizer__handler--tl {
       cursor: nwse-resize;
       left: -6px;
       top: -6px;
     }
+
     .image-resizer__handler--tr {
       cursor: nesw-resize;
       right: -6px;
       top: -6px;
     }
+
     .image-resizer__handler--bl {
       bottom: -6px;
       cursor: nesw-resize;
       left: -6px;
     }
+
     .image-resizer__handler--br {
       bottom: -6px;
       cursor: nwse-resize;
       right: -6px;
     }
   }
+
   .image-container.selected {
     outline-style: solid;
     outline-color: #1976d2;
   }
 }
+
 .o-image-view.full-screen {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 3000;
   display: flex;
   justify-content: center;
   align-items: center;
+
   .o-toolbar {
     position: absolute;
     top: 0;
@@ -435,6 +396,7 @@ export default {
     visibility: visible;
     z-index: 10;
   }
+
   .image-container {
     img {
       width: auto;
@@ -443,28 +405,34 @@ export default {
       max-height: 100%;
     }
   }
+
   .caption {
     display: none;
   }
 }
+
 .o-image-menu {
   .q-field__control {
     height: 32px;
+
     .q-field__suffix {
       line-height: 15px;
       color: #aaa;
     }
   }
+
   .q-field__marginal {
     height: 32px;
+
     .q-field__suffix {
       line-height: 15px;
       color: #aaa;
     }
   }
+
   .q-btn-group {
     .q-btn--active {
-      background: rgba(25,118,210,0.2) !important;
+      background: rgba(25, 118, 210, 0.2) !important;
     }
   }
 }
