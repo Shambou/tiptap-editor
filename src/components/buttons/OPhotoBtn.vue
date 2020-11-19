@@ -1,45 +1,30 @@
 <template>
-  <app-dropdown ref="photoPopover" class="o-fore-color-dropdown" :persistent="true" >
-    <template slot="toggler">
-      <button class="o-menubar-btn button">
+  <div>
+      <Modal ref="modal" @onConfirm="addCommand" />
+
+      <button class="o-menubar-btn button" @click="openModal(commands.image)">
           <span class="btn-content">
             <i class="material-icons editor-icon">photo</i>
           </span>
       </button>
-    </template>
-
-    <o-meta-input title="Photo" icon="image"
-                  @primaryAction="insertImage(commands.image, $event)">
-    </o-meta-input>
-  </app-dropdown>
-
-<!--  <o-menubar-btn icon="photo" class="o-photo-btn">-->
-<!--    <app-dropdown ref="photoPopover">-->
-<!--      <o-meta-input title="Photo" icon="image"-->
-<!--                    @primaryAction="insertImage(commands.image, $event)">-->
-<!--      </o-meta-input>-->
-<!--    </app-dropdown>-->
-<!--  </o-menubar-btn>-->
-
-<!--  <o-menubar-btn icon="photo" :tooltip="$o.lang.editor.photo" class="o-photo-btn">-->
-<!--    <q-menu ref="photoPopover" anchor="bottom middle" self="top middle" class="shadow-5">-->
-<!--      <o-meta-input :title="$o.lang.editor.photo" icon="image"-->
-<!--                    @primaryAction="insertImage(commands.image, $event)">-->
-<!--      </o-meta-input>-->
-<!--    </q-menu>-->
-<!--  </o-menubar-btn>-->
+  </div>
 </template>
 
 <script>
 import OMenubarBtn from '@/components/buttons/OMenubarBtn'
 import OMetaInput from '@/components/common/OMetaInput'
+import Modal from '@/components/custom/Modal'
 export default {
   name: 'o-photo-btn',
   data () {
     return {
+      src: ''
     }
   },
   props: {
+    editor: {
+      type: Object
+    },
     commands: {
       type: Object
     },
@@ -49,15 +34,31 @@ export default {
   },
   components: {
     OMenubarBtn,
-    OMetaInput
+    OMetaInput,
+    Modal
   },
   methods: {
+    openModal (command) {
+      this.$refs.modal.showModal(command)
+    },
+    addCommand (data) {
+      if (data.command !== null) {
+        data.command(data.data)
+      }
+    },
+    onShow () {
+      try {
+        this.src = this.editor.state.selection.node.attrs.src
+      } catch (e) {
+        this.src = ''
+      }
+    },
     insertImage (command, src) {
+      console.log(src)
       if (src) {
         command({ src })
+        this.src = src
       }
-
-      this.$refs.photoPopover.hide()
     }
   },
   computed: {

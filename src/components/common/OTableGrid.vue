@@ -60,6 +60,8 @@ export default {
 <style lang="scss">
 .o-table-grid {
   padding: 1rem;
+  position: relative;
+  z-index: 2000;
 
   .cell {
     height: 20px;

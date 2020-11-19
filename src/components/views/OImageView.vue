@@ -35,56 +35,56 @@
     </div>
 
     <!-- toolbar -->
-    <div class="row col-12 justify-end items-center o-toolbar">
-      <div class="col-auto actions">
-        <q-btn color="blue" icon="fullscreen" @click="toggleFullScreen" flat>
-          <q-tooltip anchor="top middle" self="bottom middle">{{$o.lang.editor.toggleFullscreen}}</q-tooltip>
-        </q-btn>
-        <q-btn color="blue" icon="settings" flat v-if="view.editable">
-          <q-tooltip anchor="top middle" self="bottom middle">{{$o.lang.image.preferences}}</q-tooltip>
-          <q-menu ref="imgRef" anchor="top right" self="top left" content-class="o-menu o-image-menu">
-            <section class="q-px-md q-pb-sm">
-              <div class="row justify-between items-center text-bold q-py-sm">
-                <div>{{$o.lang.image.preferences}}</div>
-                <div><q-btn icon="close" size="0.7rem" flat dense @click="$refs.imgRef.hide()" /></div>
-              </div>
-              <q-separator />
-              <div class="row col-12 items-start q-py-md">
-                <q-input v-model="imgOption.width" type="number" debounce="500" standout
-                         :hint="$o.lang.image.width" suffix="px"
-                         @input="onInput($event, 'width')" />
-                <div class="q-px-sm">
-                  <q-btn :icon="keepRatio?'link':'link_off'"
-                         @click="keepRatio = !keepRatio"
-                         dense
-                         flat>
-                    <q-tooltip>{{keepRatio ? $o.lang.image.lockAspectRatio : $o.lang.image.unlockAspectRatio}}</q-tooltip>
-                  </q-btn>
-                </div>
-                <q-input v-model="imgOption.height" type="number" debounce="500" standout
-                         :hint="$o.lang.image.height" suffix="px"
-                         @input="onInput($event, 'height')" />
-              </div>
-              <div class="row col-12 items-center q-py-sm">
-                {{$o.lang.image.src}}
-                <q-input v-model="imgOption.src" debounce="500" class="col-12" standout clearable
-                         @input="onInput($event, 'src')" />
-              </div>
-              <div class="row col-12 items-center q-py-sm">
-                {{$o.lang.image.caption}}
-                <q-input v-model="imgOption.caption" debounce="500" class="col-12" standout clearable
-                         @input="onInput($event, 'caption')" />
-              </div>
-              <div class="row col-12 items-center q-py-sm">
-                {{$o.lang.image.link}}
-                <q-input v-model="imgOption.ref" debounce="500" class="col-12" standout clearable
-                         @input="onInput($event, 'ref')" />
-              </div>
-            </section>
-          </q-menu>
-        </q-btn>
-      </div>
-    </div>
+<!--    <div class="row col-12 justify-end items-center o-toolbar">-->
+<!--      <div class="col-auto actions">-->
+<!--        <q-btn color="blue" icon="fullscreen" @click="toggleFullScreen" flat>-->
+<!--          <q-tooltip anchor="top middle" self="bottom middle">Toggle Fullscreen</q-tooltip>-->
+<!--        </q-btn>-->
+<!--        <q-btn color="blue" icon="settings" flat v-if="view.editable">-->
+<!--          <q-tooltip anchor="top middle" self="bottom middle">Preferences</q-tooltip>-->
+<!--          <q-menu ref="imgRef" anchor="top right" self="top left" content-class="o-menu o-image-menu">-->
+<!--            <section class="q-px-md q-pb-sm">-->
+<!--              <div class="row justify-between items-center text-bold q-py-sm">-->
+<!--                <div>Preferences</div>-->
+<!--                <div><q-btn icon="close" size="0.7rem" flat dense @click="$refs.imgRef.hide()" /></div>-->
+<!--              </div>-->
+<!--              <q-separator />-->
+<!--              <div class="row col-12 items-start q-py-md">-->
+<!--                <q-input v-model="imgOption.width" type="number" debounce="500" standout-->
+<!--                         hint="Width" suffix="px"-->
+<!--                         @input="onInput($event, 'width')" />-->
+<!--                <div class="q-px-sm">-->
+<!--                  <q-btn :icon="keepRatio?'link':'link_off'"-->
+<!--                         @click="keepRatio = !keepRatio"-->
+<!--                         dense-->
+<!--                         flat>-->
+<!--                    <q-tooltip>{{keepRatio ? "Lock Aspect Ratio" : 'Unlock Aspect Ratio'}}</q-tooltip>-->
+<!--                  </q-btn>-->
+<!--                </div>-->
+<!--                <q-input v-model="imgOption.height" type="number" debounce="500" standout-->
+<!--                         suffix="px"-->
+<!--                         @input="onInput($event, 'height')" />-->
+<!--              </div>-->
+<!--              <div class="row col-12 items-center q-py-sm">-->
+<!--                Src-->
+<!--                <q-input v-model="imgOption.src" debounce="500" class="col-12" standout clearable-->
+<!--                         @input="onInput($event, 'src')" />-->
+<!--              </div>-->
+<!--              <div class="row col-12 items-center q-py-sm">-->
+<!--                Caption-->
+<!--                <q-input v-model="imgOption.caption" debounce="500" class="col-12" standout clearable-->
+<!--                         @input="onInput($event, 'caption')" />-->
+<!--              </div>-->
+<!--              <div class="row col-12 items-center q-py-sm">-->
+<!--                Link-->
+<!--                <q-input v-model="imgOption.ref" debounce="500" class="col-12" standout clearable-->
+<!--                         @input="onInput($event, 'ref')" />-->
+<!--              </div>-->
+<!--            </section>-->
+<!--          </q-menu>-->
+<!--        </q-btn>-->
+<!--      </div>-->
+<!--    </div>-->
   </span>
 </template>
 

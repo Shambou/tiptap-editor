@@ -1,5 +1,5 @@
 <template>
-  <app-dropdown class="o-fore-color-dropdown" :persistent="persistent" @show="onShow">
+  <app-dropdown class="o-fore-color-dropdown o-dropdown" :persistent="persistent" @show="onShow">
     <template slot="toggler">
       <button class="o-menubar-btn button">
           <span class="btn-content">
@@ -8,17 +8,15 @@
       </button>
     </template>
 
-    <o-meta-input :val="href" title="Hyperlink" icon="link"
-                  @primaryAction="insertLink(commands.link, $event)"
-    >
+    <o-meta-input style="width: 350px" :val="href" title="Hyperlink" icon="link" @primaryAction="insertLink(commands.link, $event)">
     </o-meta-input>
   </app-dropdown>
 
-<!--  <o-menubar-btn icon="link" class="o-link-btn">-->
-<!--    <app-dropdown ref="linkPopover" @show="onShow">-->
-<!--      -->
-<!--    </app-dropdown>-->
-<!--  </o-menubar-btn>-->
+  <!--  <o-menubar-btn icon="link" class="o-link-btn">-->
+  <!--    <app-dropdown ref="linkPopover" @show="onShow">-->
+  <!--      -->
+  <!--    </app-dropdown>-->
+  <!--  </o-menubar-btn>-->
 </template>
 
 <script>

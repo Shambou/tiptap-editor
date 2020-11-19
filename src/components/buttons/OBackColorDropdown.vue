@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-dropdown class="o-back-color-dropdown">
+    <app-dropdown class="o-back-color-dropdown o-dropdown">
       <template slot="toggler">
         <button class="o-menubar-btn button">
           <span class="btn-content">
@@ -13,15 +13,6 @@
 
       <o-color-board :active-color="activeColor" @select="onSelect"/>
     </app-dropdown>
-
-    <!--    <q-btn-dropdown menu-anchor="bottom left" menu-self="top left" :menu-offset="[20, 0]"-->
-    <!--                    class="o-back-color-dropdown" content-class="o-back-color-menu" @click="onSelectCurrent" split flat>-->
-    <!--      <section class="row justify-center label" slot="label">-->
-    <!--        <div><q-icon name="mdi-format-color-highlight"/></div>-->
-    <!--        <div class="indicator" :style="`background: ${hex}`"></div>-->
-    <!--      </section>-->
-    <!--      <o-color-board :active-color="activeColor" @select="onSelect" v-close-popup="closable" />-->
-    <!--    </q-btn-dropdown>-->
   </div>
 </template>
 

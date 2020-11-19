@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-dropdown class="o-heading-dropdown">
+    <app-dropdown class="o-heading-dropdown o-dropdown">
       <template slot="toggler">
         <button class="o-menubar-btn button">
           <span class="btn-content">

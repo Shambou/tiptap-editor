@@ -99,6 +99,10 @@ export default {
       type: [String, Object],
       default: ''
     },
+    fileSelectorUrl: {
+      type: [String, Boolean],
+      default: false
+    },
     editable: {
       type: Boolean,
       default: true
@@ -187,6 +191,7 @@ export default {
       ]
 
       this.editor = new Editor({
+        fileSelectorUrl: this.fileSelectorUrl,
         editorProps: this.editorProps,
         extensions: extensions,
         autoFocus: true,

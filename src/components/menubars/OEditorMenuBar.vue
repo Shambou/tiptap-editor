@@ -143,6 +143,7 @@ export default {
     onSlideShow () {}
   },
   mounted () {
+    console.log(this.editor)
   },
   deactivated () {
   },

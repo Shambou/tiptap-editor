@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-dropdown class="o-align-dropdown">
+    <app-dropdown class="o-align-dropdown o-dropdown">
       <template slot="toggler">
         <button class="o-menubar-btn button">
           <span class="btn-content">
@@ -19,24 +19,6 @@
         </app-dropdown-item>
       </app-dropdown-content>
     </app-dropdown>
-
-<!--    <q-btn-dropdown icon="format_align_center" menu-anchor="bottom left" menu-self="top left" class="o-align-dropdown"-->
-<!--                    content-class="o-menu o-align-dropdown-menu" dense flat>-->
-<!--      <q-list>-->
-<!--        <q-item v-for="(item, index) in alignments" :key="index"-->
-<!--                :class="{ 'is-active': isActive(item.value) }"-->
-<!--                @click.native="item.command({ textAlign: item.value })" clickable v-close-popup>-->
-<!--          <q-item-section side>-->
-<!--            <q-icon :name="`format_align_${item.value}`"/>-->
-<!--          </q-item-section>-->
-<!--          <q-item-section>{{ item.label }}</q-item-section>-->
-<!--          <q-item-section side>-->
-<!--            <q-icon name="mdi-check" class="checked"/>-->
-<!--          </q-item-section>-->
-<!--        </q-item>-->
-<!--      </q-list>-->
-<!--    </q-btn-dropdown>-->
-<!--    <q-tooltip :delay="500">{{ $o.lang.editor.align }}</q-tooltip>-->
   </div>
 </template>
 

@@ -45,7 +45,7 @@ export default {
   data () {
     return {
       fontFamilies: [
-        { label: 'default', value: 'Roboto' },
+        { label: 'default', value: 'inherit' },
         { label: 'Arial', value: 'Arial', separator: true },
         { label: 'Arial Black', value: 'Arial Black' },
         { label: 'Georgia', value: 'Georgia' },
