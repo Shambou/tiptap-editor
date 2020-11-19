@@ -25,8 +25,8 @@
       </q-input>
     </template>
     <template slot="toolbar-right">
-      <q-btn :label="$o.lang.label.example" class="" dense flat @click="onViewExample" />
-      <q-btn-dropdown dropdown-icon="more_vert" split flat @click="onConfirm">
+      <q-btn :label="$o.lang.label.example" class="" dense flat @click.prevent="onViewExample" />
+      <q-btn-dropdown dropdown-icon="more_vert" split flat @click.prevent="onConfirm">
         <span class="text-blue" slot="label">{{$o.lang.label.submit}}</span>
         <q-list style="min-width: 120px;">
           <o-common-item icon="settings" :label="$o.lang.label.settings" v-if="service.settings">
@@ -36,7 +36,7 @@
                   <div>
                     {{service.label}} {{$o.lang.label.settings}}
                   </div>
-                  <div><q-btn icon="close" size="0.7rem" flat dense @click="$refs.imgRef.hide()" /></div>
+                  <div><q-btn icon="close" size="0.7rem" flat dense @click.prevent="$refs.imgRef.hide()" /></div>
                 </div>
                 <q-separator />
                 <div class="row col-12 items-start q-py-md">

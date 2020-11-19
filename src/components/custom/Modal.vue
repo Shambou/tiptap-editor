@@ -3,11 +3,11 @@
     <div class="modal-content">
       <h1>Add image</h1>
       <header class="tab-header">
-        <button @click="tab = 1;" :class="{ active: tab == 1 }">Link</button>
-        <button v-if="fileUploadUrl" @click="tab = 0;" :class="{ active: tab == 0 }">
+        <button @click.prevent="tab = 1;" :class="{ active: tab == 1 }">Link</button>
+        <button v-if="fileUploadUrl" @click.prevent="tab = 0;" :class="{ active: tab == 0 }">
           Upload (Drag 'n' Drop)
         </button>
-        <button @click="loadFileSelector" v-if="fileSelectorUrl" :class="{ active: tab == 2 }">
+        <button @click.prevent="loadFileSelector" v-if="fileSelectorUrl" :class="{ active: tab == 2 }">
           File selector
         </button>
       </header>
@@ -27,7 +27,7 @@
             :src="img"
             class="ma-2 selectable"
             style="max-height:100px; max-width: 100px"
-            @click="insertImage(img)"
+            @click.prevent="insertImage(img)"
           />
         </div>
       </div>
@@ -43,14 +43,14 @@
 
       <footer class="modal-footer">
         <button
-          @click="insertImage(null)"
+          @click.prevent="insertImage(null)"
           class="button primary"
           :title="validImage ? '' : 'Image URL needs to be valid'"
           :disabled="!validImage"
         >
           Add Image
         </button>
-        <button @click="show = false;" class="button danger">Close modal</button>
+        <button @click.prevent="show = false;" class="button danger">Close modal</button>
       </footer>
     </div>
   </div>

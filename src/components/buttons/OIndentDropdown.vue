@@ -1,7 +1,7 @@
 <template>
   <div>
     <q-btn-dropdown :icon="currentItem.icon" menu-anchor="bottom left" menu-self="top left" :menu-offset="[20, 0]"
-                    class="o-indent-dropdown" content-class="o-menu" @click="selectCurrent" split flat>
+                    class="o-indent-dropdown" content-class="o-menu" @click.prevent="selectCurrent" split flat>
       <q-list class="">
         <q-item v-for="(item, index) in list" :key="index"
                 :class="{ 'is-active': item.isActive }"

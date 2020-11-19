@@ -10,7 +10,7 @@
         <div class="row col-12 justify-between o-toolbar">
           <div class="row col items-center q-px-md">{{$o.lang.editor.inlineFormula}}</div>
           <div class="col-auto actions">
-            <q-btn icon="help_outline" @click="onHelp" flat />
+            <q-btn icon="help_outline" @click.prevent="onHelp" flat />
           </div>
         </div>
       </section>

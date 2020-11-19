@@ -2,7 +2,7 @@
   <div>
       <Modal ref="modal" @onConfirm="addCommand" />
 
-      <button class="o-menubar-btn button" @click="openModal(commands.image, editor.options)">
+      <button class="o-menubar-btn button" @click.prevent="openModal(commands.image, editor.options)">
           <span class="btn-content">
             <i class="material-icons editor-icon">photo</i>
           </span>

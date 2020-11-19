@@ -24,11 +24,11 @@
                        side-icon="keyboard_arrow_right">
           <q-menu ref="formulaPopover" anchor="top right" self="top left" content-class="o-menu" :offset="[2, 0]">
             <div class="row col-12 justify-around q-pa-md">
-              <div class="o-button" @click="commands.katex_block">
+              <div class="o-button" @click.prevent="commands.katex_block">
                 <div><q-icon name="mdi-sigma" /></div>
                 <div>{{$o.lang.editor.blockFormula}}</div>
               </div>
-              <div class="o-button" @click="commands.katex_inline">
+              <div class="o-button" @click.prevent="commands.katex_inline">
                 <div><q-icon name="mdi-sigma" /></div>
                 <div>{{$o.lang.editor.inlineFormula}}</div>
               </div>

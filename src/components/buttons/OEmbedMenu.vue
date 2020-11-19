@@ -5,7 +5,7 @@
 
       <section class="row col-12 q-col-gutter-sm services">
         <div class="row col-3" v-for="(service, j) of group.children" :key="`service-${i}-${j}`">
-          <q-item class="col-12" clickable v-close-popup @click="select(service)">
+          <q-item class="col-12" clickable v-close-popup @click.prevent="select(service)">
             <q-item-section avatar>
               <svg class="icon" aria-hidden="true" v-if="service.svgIcon">
                 <use :xlink:href="`#icon-${service.svgIcon}`"></use>

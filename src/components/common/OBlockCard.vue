@@ -3,26 +3,26 @@
     <section class="row col-12 o-card-toolbar" v-if="toolbar">
       <div class="row col">
         <div class="q-px-sm" v-if="fullScreen">
-          <q-btn icon="keyboard_arrow_left" label="Back" class="full-height" flat @click="onToggleScreen" />
+          <q-btn icon="keyboard_arrow_left" label="Back" class="full-height" flat @click.prevent="onToggleScreen" />
         </div>
         <div class="col">
           <slot name="toolbar-left"></slot>
         </div>
       </div>
       <div class="row col-auto q-pl-sm">
-        <q-btn icon="fullscreen" dense flat @click="onToggleScreen">
+        <q-btn icon="fullscreen" dense flat @click.prevent="onToggleScreen">
           <q-tooltip anchor="top middle" self="bottom middle">Toggle fullscreen</q-tooltip>
         </q-btn>
         <slot name="toolbar-right"></slot>
       </div>
     </section>
     <section class="o-card-inner-toolbar" v-else>
-      <q-btn icon="fullscreen" color="blue" round flat @click="onToggleScreen">
+      <q-btn icon="fullscreen" color="blue" round flat @click.prevent="onToggleScreen">
         <q-tooltip anchor="top middle" self="bottom middle">Toggle fullscreen</q-tooltip>
       </q-btn>
     </section>
 
-    <section class="o-card-content" @click="select">
+    <section class="o-card-content" @click.prevent="select">
       <slot></slot>
     </section>
   </section>

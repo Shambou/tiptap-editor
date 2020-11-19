@@ -5,7 +5,7 @@
       <input class="form-input" v-model="value" ref="input" type="text" @keyup.enter="onConfirm" placeholder="Link Address" />
     </div>
     <div class="actions row justify-between">
-      <button class="button primary" style="margin-right: 10px" @click="onConfirm">Ok</button>
+      <button class="button primary" style="margin-right: 10px" @click.prevent="onConfirm">Ok</button>
     </div>
   </app-dropdown-content>
 </template>

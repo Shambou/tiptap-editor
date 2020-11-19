@@ -13,7 +13,7 @@
         :caption="node.attrs.caption"
         :ref="node.attrs.ref"
         :class="{ 'selected': selected || resizing, 'cursor-pointer': node.attrs.ref }"
-        @click="selectImage"
+        @click.prevent="selectImage"
       />
 
       <div

@@ -5,7 +5,7 @@
       <div v-for="(col, j) in columns" :key="`col-${j}`">
         <div class="cell" :class="{'selected': row <= selectedRows && col <= selectedColumns}"
              @mouseover="select(row, col)"
-             @click="onSelected()"></div>
+             @click.prevent="onSelected()"></div>
       </div>
     </div>
 

@@ -23,7 +23,7 @@
           </q-item>
         </q-list>
       </q-btn-dropdown>
-      <q-btn :label="toggleLabel" @click="toggleMode" class="text-blue" flat v-if="view.editable && !fullScreen" />
+      <q-btn :label="toggleLabel" @click.prevent="toggleMode" class="text-blue" flat v-if="view.editable && !fullScreen" />
       <q-btn-dropdown dropdown-icon="more_vert" class="dropdown-menu" flat dense>
         <q-list style="min-width: 120px;">
           <o-common-item icon="delete" :label="$o.lang.label.remove" @click.native="onDelete" />
