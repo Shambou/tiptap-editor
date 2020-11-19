@@ -57,8 +57,8 @@
 </template>
 
 <script>
-import OBlockCard from '@/components/common/OBlockCard'
-import OCommonItem from '@/components/common/OCommonItem'
+import OBlockCard from '../common/OBlockCard'
+import OCommonItem from '../common/OCommonItem'
 
 // Code Mirror
 import { codemirror } from 'vue-codemirror'
@@ -70,7 +70,7 @@ import 'codemirror/mode/markdown/markdown'
 
 import mermaid from 'mermaid'
 
-import { MermaidTemplates } from '@/data/diagrams'
+import { MermaidTemplates } from '../../data/diagrams'
 
 export default {
   name: 'o-diagram',

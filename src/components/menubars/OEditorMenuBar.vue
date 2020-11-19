@@ -71,28 +71,28 @@
 
 <script>
 import { EditorMenuBar } from 'tiptap'
-import { CommandComponents, TableToolbar } from '@/data/editor'
+import { CommandComponents, TableToolbar } from '../../data/editor'
 
-import OForeColorDropdown from '@/components/buttons/OForeColorDropdown'
-import OBackColorDropdown from '@/components/buttons/OBackColorDropdown'
-import OFontFamilyDropdown from '@/components/buttons/OFontFamilyDropdown'
-import OAlignDropdown from '@/components/buttons/OAlignDropdown'
-import OAlignGroup from '@/components/buttons/OAlignGroup'
-import OLineHeightDropdown from '@/components/buttons/OLineHeightDropdown'
-import OHeadingDropdown from '@/components/buttons/OHeadingDropdown'
-import OHeadingList from '@/components/buttons/OHeadingList'
-import OListDropdown from '@/components/buttons/OListDropdown'
-import OIndentDropdown from '@/components/buttons/OIndentDropdown'
-import OTextFormatDropdown from '@/components/buttons/OTextFormatDropdown'
+import OForeColorDropdown from '../buttons/OForeColorDropdown'
+import OBackColorDropdown from '../buttons/OBackColorDropdown'
+import OFontFamilyDropdown from '../buttons/OFontFamilyDropdown'
+import OAlignDropdown from '../buttons/OAlignDropdown'
+import OAlignGroup from '../buttons/OAlignGroup'
+import OLineHeightDropdown from '../buttons/OLineHeightDropdown'
+import OHeadingDropdown from '../buttons/OHeadingDropdown'
+import OHeadingList from '../buttons/OHeadingList'
+import OListDropdown from '../buttons/OListDropdown'
+import OIndentDropdown from '../buttons/OIndentDropdown'
+import OTextFormatDropdown from '../buttons/OTextFormatDropdown'
 
-import OPhotoBtn from '@/components/buttons/OPhotoBtn'
-import OLinkBtn from '@/components/buttons/OLinkBtn'
-import OTableBtn from '@/components/buttons/OTableBtn'
-import OTableGroup from '@/components/buttons/OTableGroup'
+import OPhotoBtn from '../buttons/OPhotoBtn'
+import OLinkBtn from '../buttons/OLinkBtn'
+import OTableBtn from '../buttons/OTableBtn'
+import OTableGroup from '../buttons/OTableGroup'
 
-import OMenubarBtn from '@/components/buttons/OMenubarBtn'
-import OSimpleCommandBtn from '@/components/buttons/OSimpleCommandBtn'
-import OMetaInput from '@/components/common/OMetaInput'
+import OMenubarBtn from '../buttons/OMenubarBtn'
+import OSimpleCommandBtn from '../buttons/OSimpleCommandBtn'
+import OMetaInput from '../common/OMetaInput'
 
 export default {
   name: 'o-editor-menu-bar',

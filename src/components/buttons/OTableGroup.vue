@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import OMenubarBtn from '@/components/buttons/OMenubarBtn'
+import OMenubarBtn from './OMenubarBtn'
 
 export default {
   name: 'o-table-group',

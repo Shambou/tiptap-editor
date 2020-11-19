@@ -57,11 +57,11 @@
 </template>
 
 <script>
-import OMenubarBtn from '@/components/buttons/OMenubarBtn'
-import OEmbedMenu from '@/components/buttons/OEmbedMenu'
-import OCommonItem from '@/components/common/OCommonItem'
-import OMetaInput from '@/components/common/OMetaInput'
-import OTableGrid from '@/components/common/OTableGrid'
+import OMenubarBtn from './OMenubarBtn'
+import OEmbedMenu from './OEmbedMenu'
+import OCommonItem from '../common/OCommonItem'
+import OMetaInput from '../common/OMetaInput'
+import OTableGrid from '../common/OTableGrid'
 export default {
   name: 'o-add-more-btn',
   data () {

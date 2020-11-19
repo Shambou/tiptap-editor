@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import OMenubarBtn from '@/components/buttons/OMenubarBtn'
-import { isNodeActive } from '@/utils/node'
+import OMenubarBtn from './OMenubarBtn'
+import { isNodeActive } from '../../utils/node'
 export default {
   name: 'o-align-group',
   data () {

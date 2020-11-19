@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { findActiveMarkAttribute } from '@/utils/mark'
+import { findActiveMarkAttribute } from '../../utils/mark'
 
 export default {
   name: 'o-font-family-dropdown',

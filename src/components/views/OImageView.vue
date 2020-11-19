@@ -38,8 +38,8 @@
 
 <script>
 import { NodeSelection } from 'prosemirror-state'
-import { resolveImg } from '@/utils/image'
-import { clamp } from '@/utils/shared'
+import { resolveImg } from '../../utils/image'
+import { clamp } from '../../utils/shared'
 
 export default {
   name: 'o-image-view',

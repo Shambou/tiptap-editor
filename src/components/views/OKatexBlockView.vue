@@ -54,9 +54,9 @@
 </template>
 
 <script>
-import OBlockCard from '@/components/common/OBlockCard'
-import OCommonItem from '@/components/common/OCommonItem'
-import { openUrl } from '@/utils/shared'
+import OBlockCard from '../common/OBlockCard'
+import OCommonItem from '../common/OCommonItem'
+import { openUrl } from '../../utils/shared'
 
 // Code Mirror
 import { codemirror } from 'vue-codemirror'
@@ -65,9 +65,9 @@ import 'codemirror/addon/selection/active-line'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/neat.css'
 import 'codemirror/mode/markdown/markdown'
-import 'src/css/katex/katex.min.css'
+import '../../css/katex/katex.min.css'
 
-import { MermaidTemplates } from '@/data/diagrams'
+import { MermaidTemplates } from '../../data/diagrams'
 const katex = require('katex')
 
 export default {

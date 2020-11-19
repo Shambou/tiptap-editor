@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { openUrl } from '@/utils/shared'
+import { openUrl } from '../../utils/shared'
 // Code Mirror
 import { codemirror } from 'vue-codemirror'
 import 'codemirror/addon/edit/continuelist'

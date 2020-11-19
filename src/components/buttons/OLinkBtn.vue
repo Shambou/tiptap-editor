@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import OMenubarBtn from '@/components/buttons/OMenubarBtn'
-import OMetaInput from '@/components/common/OMetaInput'
+import OMenubarBtn from './OMenubarBtn'
+import OMetaInput from '../common/OMetaInput'
 
 export default {
   name: 'o-link-btn',

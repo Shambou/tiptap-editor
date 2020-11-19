@@ -68,14 +68,14 @@ import {
   OEmbed,
   OTodoItem,
   RecommendedExtensions
-} from '@/extensions'
+} from '../extensions'
 
-import DynamicClass from '@/extensions/dynamic'
+import DynamicClass from '../extensions/dynamic'
 
-import OEditorMenuBar from '@/components/menubars/OEditorMenuBar'
-import OEditorMenuBubble from '@/components/menubars/OEditorMenuBubble'
+import OEditorMenuBar from './menubars/OEditorMenuBar'
+import OEditorMenuBubble from './menubars/OEditorMenuBubble'
 
-import { DefaultToolbar, DefaultBubble } from '@/data/editor'
+import { DefaultToolbar, DefaultBubble } from '../data/editor'
 
 export default {
   name: 'tiptap-editor',

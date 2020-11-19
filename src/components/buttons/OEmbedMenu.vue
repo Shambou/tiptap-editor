@@ -31,8 +31,8 @@ import {
   DataServices,
   OtherServices,
   getEmbedService
-} from '@/data/embed'
-import { DefaultEmbedServices } from '@/data/editor'
+} from '../../data/embed'
+import { DefaultEmbedServices } from '../../data/editor'
 export default {
   name: 'o-embed-menu',
   data () {

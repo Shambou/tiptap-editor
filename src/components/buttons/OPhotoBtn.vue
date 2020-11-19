@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import OMenubarBtn from '@/components/buttons/OMenubarBtn'
-import OMetaInput from '@/components/common/OMetaInput'
-import Modal from '@/components/custom/Modal'
+import OMenubarBtn from './OMenubarBtn'
+import OMetaInput from '../common/OMetaInput'
+import Modal from '../custom/Modal'
 export default {
   name: 'o-photo-btn',
   data () {

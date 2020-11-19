@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import OMenubarBtn from '@/components/buttons/OMenubarBtn'
-import OTableGrid from '@/components/common/OTableGrid'
+import OMenubarBtn from './OMenubarBtn'
+import OTableGrid from '../common/OTableGrid'
 
 export default {
   name: 'o-table-btn',

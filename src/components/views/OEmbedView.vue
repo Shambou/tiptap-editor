@@ -69,10 +69,10 @@
 </template>
 
 <script>
-import OBlockCard from '@/components/common/OBlockCard'
-import OCommonItem from '@/components/common/OCommonItem'
-import { getEmbedService, getServiceSrc, EmbedServiceLink } from '@/data/embed'
-import { updateQueryStringItem } from '@/utils/uri'
+import OBlockCard from '../common/OBlockCard'
+import OCommonItem from '../common/OCommonItem'
+import { getEmbedService, getServiceSrc, EmbedServiceLink } from '../../data/embed'
+import { updateQueryStringItem } from '../../utils/uri'
 
 export default {
   name: 'o-embed',
