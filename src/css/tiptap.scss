@@ -8,6 +8,10 @@
 .tiptap {
   width: 100%;
 
+  .menubar {
+    display: flex;
+  }
+
   &:focus {
     outline: none;
   }
@@ -872,7 +876,7 @@ hr {
   margin: 3px 5px;
 }
 
-.column, .flex, .row {
+.column, .flex, .tiptap-row {
   display: flex;
   flex-wrap: wrap;
 }

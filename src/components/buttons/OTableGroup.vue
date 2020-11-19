@@ -1,5 +1,5 @@
 <template>
-  <section class="row o-table-group">
+  <section class="tiptap-row o-table-group">
     <o-menubar-btn mdi-icon="mdi-table-remove"
                    tooltip="Remove"
                    @click.native="commands.deleteTable"/>

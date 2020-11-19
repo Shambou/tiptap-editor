@@ -1,9 +1,9 @@
 <template>
   <editor-menu-bar :editor="editor" v-slot="editorContext">
-    <section class="row col-12 justify-between items-center bg-light tiptap-menubar">
+    <section class="tiptap-menubar">
 
       <!-- Toolbar: left -->
-      <section class="row q-px-xs menubar is-hidden" :class="{ 'is-focused': editorContext.focused }">
+      <section class="menubar" :class="{ 'is-focused': editorContext.focused }">
         <!-- Table -->
         <template v-if="editorContext.isActive.table && editorContext.isActive.table()">
           <template v-for="(item, index) of tableToolbar">

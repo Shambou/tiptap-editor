@@ -1,7 +1,7 @@
 <template>
   <app-dropdown-content class="o-table-grid dropdown-content">
 
-    <div class="row justify-start cursor-pointer" v-for="(row, i) in rows" :key="`row-${i}`">
+    <div class="tiptap-row justify-start cursor-pointer" v-for="(row, i) in rows" :key="`row-${i}`">
       <div v-for="(col, j) in columns" :key="`col-${j}`">
         <div class="cell" :class="{'selected': row <= selectedRows && col <= selectedColumns}"
              @mouseover="select(row, col)"
@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <footer class="row justify-center q-pt-md">
+    <footer class="tiptap-row justify-center q-pt-md">
       {{ selectedRows }} x {{ selectedColumns }}
     </footer>
   </app-dropdown-content>
