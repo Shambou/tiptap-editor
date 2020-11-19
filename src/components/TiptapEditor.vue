@@ -94,6 +94,10 @@ export default {
       type: [String, Boolean],
       default: false
     },
+    fileUploadUrl: {
+      type: [String, Boolean],
+      default: false
+    },
     editable: {
       type: Boolean,
       default: true
@@ -183,6 +187,7 @@ export default {
 
       this.editor = new Editor({
         fileSelectorUrl: this.fileSelectorUrl,
+        fileUploadUrl: this.fileUploadUrl,
         editorProps: this.editorProps,
         extensions: extensions,
         autoFocus: true,

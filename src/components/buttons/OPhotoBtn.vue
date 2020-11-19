@@ -2,7 +2,7 @@
   <div>
       <Modal ref="modal" @onConfirm="addCommand" />
 
-      <button class="o-menubar-btn button" @click="openModal(commands.image)">
+      <button class="o-menubar-btn button" @click="openModal(commands.image, editor.options)">
           <span class="btn-content">
             <i class="material-icons editor-icon">photo</i>
           </span>
@@ -38,26 +38,12 @@ export default {
     Modal
   },
   methods: {
-    openModal (command) {
-      this.$refs.modal.showModal(command)
+    openModal (command, options) {
+      this.$refs.modal.showModal(command, options)
     },
     addCommand (data) {
       if (data.command !== null) {
         data.command(data.data)
-      }
-    },
-    onShow () {
-      try {
-        this.src = this.editor.state.selection.node.attrs.src
-      } catch (e) {
-        this.src = ''
-      }
-    },
-    insertImage (command, src) {
-      console.log(src)
-      if (src) {
-        command({ src })
-        this.src = src
       }
     }
   },

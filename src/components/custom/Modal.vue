@@ -4,46 +4,46 @@
       <h1>Add image</h1>
       <header class="tab-header">
         <button @click="tab = 1;" :class="{ active: tab == 1 }">Link</button>
-                <button @click="tab = 0;" :class="{ active: tab == 0 }">
-                  Upload (Drag 'n' Drop)
-                </button>
-        <button @click="loadFileSelector" :class="{ active: tab == 2 }">
+        <button v-if="fileUploadUrl" @click="tab = 0;" :class="{ active: tab == 0 }">
+          Upload (Drag 'n' Drop)
+        </button>
+        <button @click="loadFileSelector" v-if="fileSelectorUrl" :class="{ active: tab == 2 }">
           File selector
         </button>
       </header>
 
-      <div v-if="tab == 1">
+      <div v-if="tab == 1" class="tab-content">
         <p>Here is a test image URL</p>
         <pre>https://i.imgur.com/0ogkTp7.jpg</pre>
         <label for="url">Image URL:</label>
-        <input v-model="imageSrc" id="url"/>
+        <input v-model="imageSrc" id="url" class="form-input" style="margin:0"/>
       </div>
-      <div v-if="tab == 2">
+      <div v-if="tab == 2" class="tab-content">
         <div class="d-flex flex-row flex-wrap">
           <img
             v-for="(img, i) in images"
             :key="'img-' + i"
-            :alt="img.alt"
-            :src="img.src"
+            alt=""
+            :src="img"
             class="ma-2 selectable"
             style="max-height:100px; max-width: 100px"
-            @click="insertImage(img.src)"
+            @click="insertImage(img)"
           />
         </div>
       </div>
-            <div v-if="tab == 0">
-<!--              <vue-dropzone-->
-<!--                ref="myVueDropzone"-->
-<!--                id="dropzone"-->
-<!--                @vdropzone-success="vfileUploaded"-->
-<!--                :options="dropzoneOptions"-->
-<!--              >-->
-<!--              </vue-dropzone>-->
-            </div>
+      <div v-if="tab == 0" class="tab-content">
+        <vue-dropzone
+          ref="myVueDropzone"
+          id="dropzone"
+          @vdropzone-success="vfileUploaded"
+          :options="dropzoneOptions"
+        >
+        </vue-dropzone>
+      </div>
 
       <footer class="modal-footer">
         <button
-          @click="insertImage"
+          @click="insertImage(null)"
           class="button primary"
           :title="validImage ? '' : 'Image URL needs to be valid'"
           :disabled="!validImage"
@@ -57,13 +57,13 @@
 </template>
 
 <script>
-// import vue2Dropzone from 'vue2-dropzone'
-// import 'vue2-dropzone/dist/vue2Dropzone.min.css'
+import vue2Dropzone from 'vue2-dropzone'
+import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 import axios from 'axios'
 
 export default {
   components: {
-    // vueDropzone: vue2Dropzone
+    vueDropzone: vue2Dropzone
   },
   data () {
     return {
@@ -71,6 +71,8 @@ export default {
       command: null,
       show: false,
       tab: 1,
+      fileSelectorUrl: false,
+      fileUploadUrl: false,
       images: [],
       dropzoneOptions: {
         url: 'https://httpbin.org/post',
@@ -91,53 +93,34 @@ export default {
     loadFileSelector () {
       this.tab = 2
 
-      this.images = [
-        {
-          src: 'https://i.imgur.com/0ogkTp7.jpg',
-          alt: '',
-        }
-      ]
-      // axios.get('https://cors-anywhere.herokuapp.com/https://api.flickr.com/services/feeds/photos_public.gne', {
-      //   headers: {
-      //     'Access-Control-Allow-Origin': '*'
-      //   },
-      //   tags: 'kitten',
-      //   format: 'json'
-      // }
-      // ).then(res => {
-      //   console.log(res.data)
-      // })
+      if (this.fileSelectorUrl) {
+        axios.get(this.fileSelectorUrl).then(res => {
+          console.log(res.data)
+        })
+      }
     },
-    showModal (command) {
+    showModal (command, options) {
       // Add the sent command
       this.command = command
+      this.fileSelectorUrl = options.fileSelectorUrl
+      this.fileUploadUrl = options.fileUploadUrl
 
       this.show = true
     },
     vfileUploaded (file) {
-      alert('Your image has been uploaded to the server')
-      alert('NOTE THIS IS A DUMMY DEMO, THERE IS NO BACKEND')
-
-      /** Here is where you get your URL/Base64 string or what ever. */
-
-      this.imageSrc = 'https://source.unsplash.com/random/400x100'
+      this.imageSrc = file
     },
-
     fileChange (e) {
       const file = this.$refs.file.files[0]
-      const uploadUrl = 'https://httpbin.org/post'
+
       let formData = new FormData()
 
       formData.append('file', this.file)
 
       console.log('Uploading...')
 
-      axios.post(uploadUrl).then(data => {
-        // Take the URL/Base64 from `data` returned from server
-        alert('Your image has been uploaded to the server')
-        alert('NOTE THIS IS A DUMMY DEMO, THERE IS NO BACKEND')
-
-        this.imageSrc = 'https://source.unsplash.com/random/400x100'
+      axios.post(this.fileUploadUrl).then(data => {
+        this.imageSrc = data.data
       })
     },
     insertImage (img = null) {
@@ -149,7 +132,7 @@ export default {
         command: this.command,
         data: {
           src: this.imageSrc
-          // alt: "YOU CAN ADD ALT",
+          // alt: 'image',
           // title: "YOU CAN ADD TITLE"
         }
       }
@@ -186,6 +169,7 @@ export default {
   background-color: #fff;
   padding: 30px;
   border-radius: 8px;
+
 }
 
 .modal-footer {
@@ -196,28 +180,6 @@ label {
   display: block;
   margin: 0.25em 0;
 }
-
-/*button {*/
-/*  font-family: inherit;*/
-/*  font-size: 100%;*/
-/*  padding: 0.5em 1em;*/
-/*  color: white;*/
-/*  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);*/
-/*  border: 1px solid #999;*/
-/*  border: transparent;*/
-/*  background-color: #e6e6e6;*/
-/*  text-decoration: none;*/
-/*  border-radius: 2px;*/
-/*  cursor: pointer;*/
-/*}*/
-
-/*button.danger {*/
-/*  background: rgb(202, 60, 60);*/
-/*}*/
-
-/*button.success {*/
-/*  background: rgb(28, 184, 65);*/
-/*}*/
 
 button:disabled {
   opacity: 0.3;
@@ -230,7 +192,7 @@ button + button {
 .tab-header {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #999;
 }
 
 .tab-header button {
@@ -240,10 +202,15 @@ button + button {
   flex: 1;
   padding: 5px 10px;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .tab-header button.active {
-  background-color: #222;
-  color: #fff;
+  background-color: #ccc;
+  color: #111;
+}
+
+.tab-content {
+  padding: 10px 5px;
 }
 </style>

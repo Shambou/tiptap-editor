@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
 
-    <tiptap-editor v-bind="options" @update="onUpdate" />
+    <tiptap-editor v-bind="options" @update="onUpdate"/>
   </div>
 </template>
 
@@ -18,27 +18,38 @@ export default {
   data () {
     return {
       options: {
-        content: 'Testiram',
+        content: '',
         editable: true,
+        // fileSelectorUrl: 'moderator/webinarImages/images',
+        // fileUploadUrl: 'moderator/webinarImages/store',
         extensions: [
           ...RecommendedExtensions,
-          // other extensions
-          // name string, or custom extension
         ],
         toolbar: [
-          // 'add-more',
-          // 'separator',
           'bold',
           'italic',
           'underline',
           'font-family',
           'strike',
           'code',
-          'separator',
           'heading',
           'fore-color',
-          // other toolbar buttons
-          // name string
+          'back-color',
+          'format_clear',
+          'align-dropdown',
+          'indent',
+          'outdent',
+          'line-height',
+          'horizontal',
+          'bullet_list',
+          'ordered_list',
+          'blockquote',
+          'link',
+          'undo',
+          'redo',
+          'print',
+          'photo',
+          'table',
         ]
       },
       json: '',
