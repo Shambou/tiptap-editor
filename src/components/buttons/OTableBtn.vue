@@ -15,7 +15,7 @@
 <script>
 import OMenubarBtn from './OMenubarBtn'
 import OTableGrid from '../common/OTableGrid'
-
+import { AppDropdown } from '../index'
 export default {
   name: 'o-table-btn',
   data () {
@@ -36,7 +36,8 @@ export default {
   },
   components: {
     OMenubarBtn,
-    OTableGrid
+    OTableGrid,
+    AppDropdown
   },
   methods: {
     onHide () {

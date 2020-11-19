@@ -11,8 +11,10 @@
 </template>
 
 <script>
+import { AppDropdownContent } from '../index'
 export default {
   name: 'o-meta-input',
+  components: { AppDropdownContent },
   data () {
     return {
       value: ''

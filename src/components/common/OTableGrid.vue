@@ -16,8 +16,10 @@
 </template>
 
 <script>
+import { AppDropdownContent } from '../index'
 export default {
   name: 'o-table-grid',
+  components: { AppDropdownContent },
   data () {
     return {
       rows: 5,

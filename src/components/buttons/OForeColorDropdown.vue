@@ -19,6 +19,7 @@
 <script>
 import OColorBoard from '../common/OColorBoard'
 import { findActiveMarkAttribute } from '../../utils/mark'
+import { AppDropdown } from '../index'
 export default {
   name: 'o-fore-color-dropdown',
   data () {
@@ -39,7 +40,8 @@ export default {
     }
   },
   components: {
-    OColorBoard
+    OColorBoard,
+    AppDropdown
   },
   methods: {
     onSelectCurrent () {

@@ -24,8 +24,14 @@
 
 <script>
 import { isNodeActive } from '../../utils/node'
+import { AppDropdown, AppDropdownItem, AppDropdownContent } from '../index'
 export default {
   name: 'o-line-height-dropdown',
+  components: {
+    AppDropdown,
+    AppDropdownContent,
+    AppDropdownItem,
+  },
   data () {
     return {
       types: [

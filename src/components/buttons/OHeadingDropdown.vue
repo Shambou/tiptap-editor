@@ -16,6 +16,7 @@
 
 <script>
 import OHeadingList from './OHeadingList'
+import { AppDropdown } from '../index'
 export default {
   name: 'o-heading-dropdown',
   data () {
@@ -31,7 +32,8 @@ export default {
     }
   },
   components: {
-    OHeadingList
+    OHeadingList,
+    AppDropdown
   },
   methods: {
   },

@@ -16,7 +16,7 @@
 <script>
 import OMenubarBtn from './OMenubarBtn'
 import OMetaInput from '../common/OMetaInput'
-
+import { AppDropdown } from '../index'
 export default {
   name: 'o-link-btn',
   data () {
@@ -38,7 +38,8 @@ export default {
   },
   components: {
     OMenubarBtn,
-    OMetaInput
+    OMetaInput,
+    AppDropdown
   },
   methods: {
     onShow () {

@@ -14,9 +14,11 @@
 
 <script>
 import { highlightColor } from '../../utils/shared'
+import { AppDropdownContent } from '../index'
 
 export default {
   name: 'o-color-board',
+  components: { AppDropdownContent },
   data () {
     return {
     }

@@ -71,7 +71,8 @@ import {
 } from '../extensions'
 
 import DynamicClass from '../extensions/dynamic'
-
+import 'material-design-icons/iconfont/material-icons.css'
+import '@mdi/font/css/materialdesignicons.css'
 import OEditorMenuBar from './menubars/OEditorMenuBar'
 import OEditorMenuBubble from './menubars/OEditorMenuBubble'
 
@@ -309,4 +310,6 @@ export default {
 
 <style lang="scss">
   @import "../css/tiptap.scss";
+  //@import '~material-design-icons';
+  //@import '~@mdi';
 </style>

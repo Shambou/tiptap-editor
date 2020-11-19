@@ -24,9 +24,11 @@
 
 <script>
 import { isNodeActive } from '../../utils/node'
+import { AppDropdown, AppDropdownContent, AppDropdownItem } from '../index'
 
 export default {
   name: 'o-align-dropdown',
+  components: { AppDropdown, AppDropdownContent, AppDropdownItem },
   data () {
     return {}
   },

@@ -22,9 +22,10 @@
 
 <script>
 import { findActiveMarkAttribute } from '../../utils/mark'
-
+import { AppDropdown, AppDropdownContent, AppDropdownItem } from '../index'
 export default {
   name: 'o-font-family-dropdown',
+  components: { AppDropdown, AppDropdownContent, AppDropdownItem },
   data () {
     return {
       fontFamilies: [

@@ -14,9 +14,13 @@
 
 <script>
 import { isNodeActive } from '../../utils/node'
-
+import { AppDropdownContent, AppDropdownItem } from '../index'
 export default {
   name: 'o-heading-list',
+  components: {
+    AppDropdownContent,
+    AppDropdownItem
+  },
   data () {
     return {}
   },
