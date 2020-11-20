@@ -17,7 +17,7 @@ export default {
   },
   data () {
     return {
-      test: '',
+      test: 'test',
       options: {
         content: '',
         editable: true,

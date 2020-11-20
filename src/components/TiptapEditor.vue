@@ -154,7 +154,8 @@ export default {
       }
     },
     value: {
-      type: String
+      type: String,
+      default: ''
     }
   },
   components: {
@@ -274,7 +275,7 @@ export default {
     },
     // content
     getContent () {
-      let content = this.content || ''
+      let content = this.content || this.value
       if (content && content.type) {
         return content // parsed json
       }
