@@ -1,11 +1,13 @@
 <template>
   <o-menubar-btn :icon="config.icon"
+                 v-tooltip="`${config.tooltip}`"
                  :class="{ 'is-active': config.isActive }"
                  @click.native.prevent="config.command" />
 </template>
 
 <script>
 import OMenubarBtn from './OMenubarBtn'
+
 export default {
   name: 'o-simple-command-btn',
   data () {
@@ -44,7 +46,7 @@ export default {
         strike: { icon: 'format_strikethrough', tooltip: 'strikethrough', isActive: this.isActive.strike(), command: this.commands.strike },
         underline: { icon: 'format_underline', tooltip: 'underline', isActive: this.isActive.underline(), command: this.commands.underline },
         code: { icon: 'code', tooltip: 'code', isActive: this.isActive.code(), command: this.commands.code },
-        code_block: { icon: 'mdi-code-braces', tooltip: 'codeBlock', isActive: this.isActive.code_block(), command: this.commands.code_block },
+        code_block: { icon: 'developer_mode', tooltip: 'codeBlock', isActive: this.isActive.code_block(), command: this.commands.code_block },
         horizontal: { icon: 'remove', tooltip: 'hr', isActive: false, command: this.commands.horizontal_rule },
         bullet_list: { icon: 'format_list_bulleted', tooltip: 'unorderedList', isActive: this.isActive.bullet_list(), command: this.commands.bullet_list },
         ordered_list: { icon: 'format_list_numbered', tooltip: 'orderedList', isActive: this.isActive.ordered_list(), command: this.commands.ordered_list },

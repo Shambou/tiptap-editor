@@ -2,7 +2,7 @@
   <div>
     <app-dropdown class="o-heading-dropdown o-dropdown">
       <template slot="toggler">
-        <button class="o-menubar-btn button">
+        <button class="o-menubar-btn button" :class="{ 'is-active': active }">
           <span class="btn-content">
             <i class="material-icons editor-icon">title</i>
           </span>
@@ -29,6 +29,9 @@ export default {
     },
     commands: {
       type: Object
+    },
+    isActive: {
+      type: Object
     }
   },
   components: {
@@ -38,6 +41,9 @@ export default {
   methods: {
   },
   computed: {
+    active () {
+      return this.isActive.heading()
+    }
   }
 }
 </script>

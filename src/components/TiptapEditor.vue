@@ -77,7 +77,9 @@ import OEditorMenuBar from './menubars/OEditorMenuBar'
 import OEditorMenuBubble from './menubars/OEditorMenuBubble'
 
 import { DefaultToolbar, DefaultBubble } from '../data/editor'
-
+import Vue from 'vue'
+import VTooltip from 'v-tooltip'
+Vue.use(VTooltip)
 export default {
   name: 'tiptap-editor',
   data () {
@@ -168,6 +170,7 @@ export default {
   methods: {
     initEditor () {
       const customExtensions = this.generateExtensions()
+
       const extensions = [
         // custom
         ...customExtensions,
@@ -216,7 +219,13 @@ export default {
     },
     generateExtensions () {
       let extensions = []
-      for (let extension of this.extensions) {
+      let localExtensions = this.extensions
+
+      if (!this.extensions.length) {
+        localExtensions = [...RecommendedExtensions]
+      }
+
+      for (let extension of localExtensions) {
         if (typeof extension === 'string') {
           if (!RecommendedExtensions.includes(extension)) {
             continue
@@ -256,6 +265,7 @@ export default {
         }
         extensions.push(extension)
       }
+
       return extensions
     },
     // content
@@ -290,7 +300,6 @@ export default {
   },
   watch: {
     editable (to, from) {
-      console.log('editable', to)
       this.editor.options.editable = to
     },
     content (to, from) {

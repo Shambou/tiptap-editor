@@ -12,7 +12,7 @@
         <app-dropdown-item v-for="(item, index) in alignments"
                            :key="`align-${index}`"
                            :class="{ 'is-active': isActive(item.value) }"
-                           @click.native.prevent="this.commands.alignment({ textAlign: value })">
+                           @click.native.prevent="commands.alignment({ textAlign: item.value })">
           <span class="btn-content">
             <i class="material-icons editor-icon">{{ `format_align_${item.value}` }}</i> {{ item.label }}
           </span>
