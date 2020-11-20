@@ -1,5 +1,5 @@
 <template>
-  <app-dropdown class="o-fore-color-dropdown o-dropdown" :persistent="persistent" @show="onShow">
+  <app-dropdown class="o-fore-color-dropdown o-dropdown" :persistent="persistent" @show="onShow" v-tooltip="'Link'">
     <template slot="toggler">
       <button class="o-menubar-btn button">
           <span class="btn-content">

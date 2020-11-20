@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-dropdown class="o-line-height-dropdown o-dropdown">
+    <app-dropdown class="o-line-height-dropdown o-dropdown" v-tooltip="'Line Height'">
       <template slot="toggler">
         <button class="o-menubar-btn button">
           <span class="btn-content">

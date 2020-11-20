@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-dropdown class="o-back-color-dropdown o-dropdown">
+    <app-dropdown class="o-back-color-dropdown o-dropdown" v-tooltip="'Background Color'">
       <template slot="toggler">
         <button class="o-menubar-btn button">
           <span class="btn-content">

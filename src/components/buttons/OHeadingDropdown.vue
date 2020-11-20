@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-dropdown class="o-heading-dropdown o-dropdown">
+    <app-dropdown class="o-heading-dropdown o-dropdown" v-tooltip="'Heading'">
       <template slot="toggler">
         <button class="o-menubar-btn button" :class="{ 'is-active': active }">
           <span class="btn-content">

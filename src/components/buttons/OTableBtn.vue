@@ -1,5 +1,5 @@
 <template>
-  <app-dropdown class="o-table-btn-menu" @hide="onHide" :persistent="false">
+  <app-dropdown class="o-table-btn-menu o-dropdown" @hide="onHide" :persistent="false" v-tooltip="'Table'">
     <template slot="toggler">
       <button class="o-menubar-btn button">
           <span class="btn-content">
@@ -8,7 +8,7 @@
       </button>
     </template>
 
-    <o-table-grid :commands="commands" class="o-table-btn-menu"/>
+    <o-table-grid :commands="commands" class="o-table-btn-menu dropdown-content"/>
   </app-dropdown>
 </template>
 

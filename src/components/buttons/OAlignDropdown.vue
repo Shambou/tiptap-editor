@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-dropdown class="o-align-dropdown o-dropdown">
+    <app-dropdown class="o-align-dropdown o-dropdown" v-tooltip="'Align'">
       <template slot="toggler">
         <button class="o-menubar-btn button">
           <span class="btn-content">
