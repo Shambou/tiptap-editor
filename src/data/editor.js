@@ -48,8 +48,7 @@ export const DefaultToolbar = [
   'separator',
   'undo',
   'redo',
-  'separator',
-  'print',
+  'print'
 ]
 
 /**
@@ -58,7 +57,7 @@ export const DefaultToolbar = [
 export const TableToolbar = [
   'bold',
   'italic',
-  'code',
+  'strike',
   'font-family',
   'fore-color',
   'back-color',

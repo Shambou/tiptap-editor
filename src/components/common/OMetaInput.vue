@@ -73,25 +73,14 @@ export default {
   }
   .fields {
     padding: 10px 0;
-    .q-field--focused {
-      .q-field__control {
-        box-shadow: unset !important;
-      }
-    }
-    .q-field--float {
-      .q-field__control {
-        box-shadow: unset !important;
-      }
-    }
+    display: flex;
+
     .hint {
       font-size: 0.8rem;
     }
   }
   .actions {
     padding-top: 10px;
-    .q-btn {
-      min-width: 100px;
-    }
   }
 }
 </style>

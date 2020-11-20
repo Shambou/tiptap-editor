@@ -10,9 +10,9 @@
       </template>
       <app-dropdown-content class="dropdown-content">
         <app-dropdown-item v-for="(item, index) in alignments"
-                           :key="index"
+                           :key="`align-${index}`"
                            :class="{ 'is-active': isActive(item.value) }"
-                           @click.native="item.command({ textAlign: item.value })">
+                           @click.native.prevent="this.commands.alignment({ textAlign: value })">
           <span class="btn-content">
             <i class="material-icons editor-icon">{{ `format_align_${item.value}` }}</i> {{ item.label }}
           </span>
@@ -48,10 +48,10 @@ export default {
   computed: {
     alignments () {
       return [
-        { label: 'Left', value: 'left', command: this.commands.alignment },
-        { label: 'Center', value: 'center', command: this.commands.alignment },
-        { label: 'Right', value: 'right', command: this.commands.alignment },
-        { label: 'Justify', value: 'justify', command: this.commands.alignment },
+        { label: 'Left', value: 'left' },
+        { label: 'Center', value: 'center' },
+        { label: 'Right', value: 'right' },
+        { label: 'Justify', value: 'justify' },
       ]
     }
   }

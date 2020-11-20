@@ -87,20 +87,22 @@ export function setAlignment (type, attrs = {}) {
         : parent.type
       const predicate = node => nodeEqualsType({ node, types: predicateTypes })
 
-      const {
-        pos,
-        node: {
-          type: nType,
-          attrs: nAttrs,
-          marks: nMarks,
-        },
-      } = findParentNode(predicate)(selection)
+      try {
+        const {
+          pos,
+          node: {
+            type: nType,
+            attrs: nAttrs,
+            marks: nMarks,
+          },
+        } = findParentNode(predicate)(selection)
 
-      tr = tr.setNodeMarkup(pos, nType, { ...nAttrs, textAlign: alignment }, nMarks)
+        tr = tr.setNodeMarkup(pos, nType, { ...nAttrs, textAlign: alignment }, nMarks)
 
-      if (dispatch) {
-        dispatch(tr)
-      }
+        if (dispatch) {
+          dispatch(tr)
+        }
+      } catch (e) {}
 
       return true
     }
