@@ -2,13 +2,13 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
 
-    <tiptap-editor v-bind="options" @update="onUpdate"/>
+<!--    <tiptap-editor v-bind="options" @update="onUpdate"/>-->
+    <tiptap-editor :options="options" v-model="test"/>
   </div>
 </template>
 
 <script>
 import TiptapEditor from './components/TiptapEditor'
-import { RecommendedExtensions } from './extensions'
 
 export default {
   name: 'App',
@@ -17,14 +17,13 @@ export default {
   },
   data () {
     return {
+      test: '',
       options: {
         content: '',
         editable: true,
-        // fileSelectorUrl: 'moderator/webinarImages/images',
-        // fileUploadUrl: 'moderator/webinarImages/store',
-        // extensions: [
-        //   ...RecommendedExtensions,
-        // ],
+        fileSelectorUrl: 'moderator/webinarImages/images',
+        fileUploadUrl: 'moderator/webinarImages/store',
+        toolbar: [],
         // toolbar: [
         //   'bold',
         //   'italic',
@@ -57,10 +56,15 @@ export default {
     }
   },
   methods: {
-    onUpdate ({ getJSON, getHTML }) {
-      this.json = getJSON()
-      this.html = getHTML()
-      console.log('html', this.html)
+    // onUpdate ({ getJSON, getHTML }) {
+    //   this.json = getJSON()
+    //   this.html = getHTML()
+    //   // console.log('html', this.html)
+    // }
+  },
+  watch: {
+    test (to, from) {
+      console.log('html', this.test)
     }
   },
 }

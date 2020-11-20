@@ -152,6 +152,9 @@ export default {
         return {
         }
       }
+    },
+    value: {
+      type: String
     }
   },
   components: {
@@ -207,6 +210,7 @@ export default {
           this.$emit('blur', { event, state, view })
         },
         onUpdate: ({ getJSON, getHTML, state, transaction }) => {
+          this.$emit('input', getHTML())
           this.$emit('update', { getJSON, getHTML, state, transaction })
         },
         onTransaction: ({ getJSON, getHTML, state, transaction }) => {
