@@ -1,14 +1,13 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="../assets/logo.png">
 
-<!--    <tiptap-editor v-bind="options" @update="onUpdate"/>-->
     <tiptap-editor :options="options" v-model="test"/>
   </div>
 </template>
 
 <script>
-import TiptapEditor from './components/TiptapEditor'
+import TiptapEditor from '../components/TiptapEditor'
 
 export default {
   name: 'App',
@@ -72,7 +71,7 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
