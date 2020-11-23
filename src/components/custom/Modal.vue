@@ -5,7 +5,7 @@
       <header class="tab-header">
         <button @click.prevent="tab = 1;" :class="{ active: tab == 1 }">Link</button>
         <button v-if="fileUploadUrl" @click.prevent="tab = 0;" :class="{ active: tab == 0 }">
-          Upload (Drag 'n' Drop)
+          Upload
         </button>
         <button @click.prevent="loadFileSelector" v-if="fileSelectorUrl" :class="{ active: tab == 2 }">
           File selector
@@ -72,10 +72,9 @@ export default {
       show: false,
       tab: 1,
       fileSelectorUrl: false,
-      fileUploadUrl: false,
       images: [],
       dropzoneOptions: {
-        url: 'https://httpbin.org/post',
+        url: '',
         thumbnailWidth: 200,
         dictDefaultMessage: 'UPLOAD A FILE'
       }
@@ -103,25 +102,12 @@ export default {
       // Add the sent command
       this.command = command
       this.fileSelectorUrl = options.fileSelectorUrl
-      this.fileUploadUrl = options.fileUploadUrl
-
+      this.dropzoneOptions.url = options.fileUploadUrl
+      this.dropzoneOptions.headers = { 'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content }
       this.show = true
     },
     vfileUploaded (file) {
       this.imageSrc = file
-    },
-    fileChange (e) {
-      const file = this.$refs.file.files[0]
-
-      let formData = new FormData()
-
-      formData.append('file', this.file)
-
-      console.log('Uploading...')
-
-      axios.post(this.fileUploadUrl).then(data => {
-        this.imageSrc = data.data
-      })
     },
     insertImage (img = null) {
       if (img) {
