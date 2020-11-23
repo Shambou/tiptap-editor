@@ -79,7 +79,15 @@ export default {
         thumbnailWidth: 200,
         dictDefaultMessage: 'UPLOAD A FILE',
         acceptedFiles: 'image/*',
-        uploadMultiple: false
+        uploadMultiple: false,
+        maxFiles: 1,
+        init: function () {
+          this.hiddenFileInput.removeAttribute('multiple')
+          this.on('maxfilesexceeded', function (file) {
+            this.removeAllFiles()
+            this.addFile(file)
+          })
+        }
       }
     }
   },
@@ -97,7 +105,7 @@ export default {
 
       if (this.fileSelectorUrl) {
         axios.get(this.fileSelectorUrl).then(res => {
-          console.log(res.data)
+          this.images = res.data
         })
       }
     },
