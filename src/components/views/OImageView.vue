@@ -107,7 +107,7 @@ export default {
         }
       }).catch(err => {
         console.warn('error', err)
-        this.src = 'https://www.donote.info/statics/logo.png'
+        this.src = ''
         this.resolveImage(true)
       })
     },

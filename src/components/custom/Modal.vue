@@ -108,8 +108,8 @@ export default {
       this.dropzoneOptions.headers = { 'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content }
       this.show = true
     },
-    vfileUploaded (file) {
-      this.imageSrc = file
+    vfileUploaded (file, response) {
+      this.insertImage(response.image_src)
     },
     insertImage (img = null) {
       if (img) {
