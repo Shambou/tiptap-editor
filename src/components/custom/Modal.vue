@@ -77,7 +77,9 @@ export default {
       dropzoneOptions: {
         url: '',
         thumbnailWidth: 200,
-        dictDefaultMessage: 'UPLOAD A FILE'
+        dictDefaultMessage: 'UPLOAD A FILE',
+        acceptedFiles: 'image/*',
+        uploadMultiple: false
       }
     }
   },
