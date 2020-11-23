@@ -72,6 +72,7 @@ export default {
       show: false,
       tab: 1,
       fileSelectorUrl: false,
+      fileUploadUrl: false,
       images: [],
       dropzoneOptions: {
         url: '',
@@ -102,6 +103,7 @@ export default {
       // Add the sent command
       this.command = command
       this.fileSelectorUrl = options.fileSelectorUrl
+      this.fileUploadUrl = options.fileUploadUrl
       this.dropzoneOptions.url = options.fileUploadUrl
       this.dropzoneOptions.headers = { 'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content }
       this.show = true
