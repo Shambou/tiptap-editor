@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="../assets/logo.png">
 
-    <tiptap-editor :options="options" v-model="test"/>
+    <tiptap-editor :options="options" v-model="test" placeholder="Nesto 123"/>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   },
   data () {
     return {
-      test: 'test',
+      test: '',
       options: {
         content: '',
         editable: true,

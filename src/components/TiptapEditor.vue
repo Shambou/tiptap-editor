@@ -40,7 +40,7 @@ import {
   Placeholder,
   Focus,
   HorizontalRule,
-  TrailingNode,
+  TrailingNode
   // Image
 } from 'tiptap-extensions'
 
@@ -156,6 +156,10 @@ export default {
     value: {
       type: String,
       default: ''
+    },
+    placeholder: {
+      type: String,
+      default: ''
     }
   },
   components: {
@@ -190,7 +194,14 @@ export default {
           node: 'paragraph',
           notAfter: ['paragraph']
         }),
-        new OAlign()
+        new OAlign(),
+        new Placeholder({
+          emptyEditorClass: 'is-editor-empty',
+          emptyNodeClass: 'is-empty',
+          emptyNodeText: this.placeholder,
+          showOnlyWhenEditable: true,
+          showOnlyCurrent: true,
+        }),
       ]
 
       this.editor = new Editor({
