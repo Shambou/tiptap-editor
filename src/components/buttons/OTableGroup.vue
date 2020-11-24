@@ -2,31 +2,31 @@
   <section class="tiptap-row o-table-group">
     <o-menubar-btn mdi-icon="mdi-table-remove"
                    v-tooltip="'Remove table'"
-                   @click.native="commands.deleteTable"/>
+                   @click.native.prevent="commands.deleteTable"/>
 
     <o-menubar-btn mdi-icon="mdi-table-column-plus-before"
                    v-tooltip="'Insert Column Left'"
-                   @click.native="commands.addColumnBefore"/>
+                   @click.native.prevent="commands.addColumnBefore"/>
     <o-menubar-btn mdi-icon="mdi-table-column-plus-after"
                    v-tooltip="'Insert Column Right'"
-                   @click.native="commands.addColumnAfter"/>
+                   @click.native.prevent="commands.addColumnAfter"/>
     <o-menubar-btn mdi-icon="mdi-table-column-remove"
                    v-tooltip="'Remove Columns'"
-                   @click.native="commands.deleteColumn"/>
+                   @click.native.prevent="commands.deleteColumn"/>
 
     <o-menubar-btn mdi-icon="mdi-table-row-plus-before"
                    v-tooltip="'Insert Row Up'"
-                   @click.native="commands.addRowBefore"/>
+                   @click.native.prevent="commands.addRowBefore"/>
     <o-menubar-btn mdi-icon="mdi-table-row-plus-after"
                    v-tooltip="'Insert Row Down'"
-                   @click.native="commands.addRowAfter"/>
+                   @click.native.prevent="commands.addRowAfter"/>
     <o-menubar-btn mdi-icon="mdi-table-row-remove"
                    v-tooltip="'Remove Rows'"
-                   @click.native="commands.deleteRow"/>
+                   @click.native.prevent="commands.deleteRow"/>
 
     <o-menubar-btn mdi-icon="mdi-table-merge-cells"
                    v-tooltip="'Merge cells'"
-                   @click.native="commands.toggleCellMerge"/>
+                   @click.native.prevent="commands.toggleCellMerge"/>
   </section>
 </template>
 
