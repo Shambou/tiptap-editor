@@ -286,7 +286,7 @@ export default {
     },
     // content
     getContent () {
-      let content = this.content || this.value
+      let content = this.value
       if (content && content.type) {
         return content // parsed json
       }
@@ -320,6 +320,11 @@ export default {
     },
     content (to, from) {
       this.setContent()
+    },
+    value (newVal, oldVal) {
+      if (oldVal.length === 0) {
+        this.editor.setContent(newVal, true)
+      }
     }
   },
   mounted: function () {
