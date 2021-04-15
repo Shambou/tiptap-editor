@@ -169,7 +169,11 @@ export default {
   },
   computed: {
     editorMenuBar () {
-      return this.toolbar.length > 0 ? this.toolbar : DefaultToolbar
+      if (this.toolbar.length) {
+        return this.toolbar
+      }
+
+      return this.options.toolbar.length > 0 ? this.options.toolbar : DefaultToolbar
     },
     editorMenuBubble () {
       return this.bubble.length > 0 ? this.bubble : DefaultBubble

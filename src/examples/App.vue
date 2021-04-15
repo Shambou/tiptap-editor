@@ -2,7 +2,9 @@
   <div id="app">
     <img alt="Vue logo" src="../assets/logo.png">
 
-    <tiptap-editor :options="options" v-model="test" placeholder="Nesto 123"/>
+    <div style="width: 30%">
+      <tiptap-editor :options="options" v-model="test" placeholder=""/>
+    </div>
   </div>
 </template>
 
@@ -22,34 +24,64 @@ export default {
         editable: true,
         fileSelectorUrl: 'moderator/webinarImages/images',
         fileUploadUrl: 'moderator/webinarImages/store',
-        toolbar: [],
-        // toolbar: [
-        //   'bold',
-        //   'italic',
-        //   'underline',
-        //   'font-family',
-        //   'strike',
-        //   'code',
-        //   'heading',
-        //   'fore-color',
-        //   'back-color',
-        //   'format_clear',
-        //   'align-dropdown',
-        //   'indent',
-        //   'outdent',
-        //   'line-height',
-        //   'horizontal',
-        //   'bullet_list',
-        //   'ordered_list',
-        //   'blockquote',
-        //   'link',
-        //   'undo',
-        //   'redo',
-        //   'print',
-        //   'photo',
-        //   'table',
-        // ]
+        toolbar: [
+          'bold',
+          'italic',
+          'underline',
+          'font-family',
+          'strike',
+          'heading',
+          'fore-color',
+          'back-color',
+          'format_clear',
+          'align-dropdown',
+          'indent',
+          'outdent',
+          'line-height',
+          'horizontal',
+          'bullet_list',
+          'ordered_list',
+          'blockquote',
+          'link',
+          'undo',
+          'redo',
+          'photo',
+          'table',
+        ]
       },
+      // options: {
+      //   content: '',
+      //   editable: true,
+      //   fileSelectorUrl: 'moderator/webinarImages/images',
+      //   fileUploadUrl: 'moderator/webinarImages/store',
+      //   toolbar: [],
+      // toolbar: [
+      //   'bold',
+      //   'italic',
+      //   'underline',
+      //   'font-family',
+      //   'strike',
+      //   'code',
+      //   'heading',
+      //   'fore-color',
+      //   'back-color',
+      //   'format_clear',
+      //   'align-dropdown',
+      //   'indent',
+      //   'outdent',
+      //   'line-height',
+      //   'horizontal',
+      //   'bullet_list',
+      //   'ordered_list',
+      //   'blockquote',
+      //   'link',
+      //   'undo',
+      //   'redo',
+      //   'print',
+      //   'photo',
+      //   'table',
+      // ]
+      // },
       json: '',
       html: ''
     }
